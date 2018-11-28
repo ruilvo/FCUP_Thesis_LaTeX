@@ -1,0 +1,616 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% CSPELL:DISABLE
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FCUP Masters/Doctoral thesis title/examiner pages and book cover
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{article}
+
+
+% ENCODING/ SPECIAL CHARACTERS
+\usepackage[utf8]{inputenc}
+
+
+% GRAPHICAL PACKAGES
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{rotating}
+\usepackage{xcolor}
+\usepackage[export]{adjustbox}
+\usepackage{tikz}
+
+
+% HYPERREF
+\usepackage{hyperref}
+\hypersetup{colorlinks,urlcolor=blue}
+
+
+% STARTING GEOMETRY
+\usepackage[a4paper]{geometry}
+\geometry{
+	margin=0mm
+}
+
+
+% LINESPREAD
+\usepackage{calc}
+\usepackage{setspace}
+\setstretch{1.2}
+
+
+% FONT DIR AND ARIAL FONT SETUP (XELATEX NEEDED)
+\usepackage{fontspec}
+\setmainfont[
+	Path={fonts/},
+	UprightFont=*-Regular,
+	ItalicFont=*-Italic,
+	BoldFont=*-Bold,
+	BoldItalicFont=*-Bold-Italic
+]{Arial}
+
+
+% NEW FONT SIZES FOR TITLE
+\makeatletter
+\newcommand\HUGE{\@setfontsize\Huge{36}{43.2}}
+\newcommand\HugeA{\@setfontsize\Huge{24}{28.8}}
+\newcommand\LargeA{\@setfontsize\Large{18}{21.6}}
+\newcommand\LargeB{\@setfontsize\LARGE{20}{24}}
+\newcommand\smaller{\@setfontsize\small{7}{8.4}}
+\makeatother
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT COMMANDS
+%----------------------------------------------------------------------------------------
+
+% Default blue (azul ciencias)
+\definecolor{fcupblue}{RGB}{153,205,255}
+
+\newlength{\spinew}
+\newlength{\coverwidth}
+\newlength{\sidew}
+
+\newcommand{\spinewidth}[1]{
+	\setlength{\spinew}{#1}
+	\setlength{\coverwidth}{420mm + \spinew}
+}
+
+\newcommand*{\supervisor}[2][]{
+	\def\supnamenolink{#2}
+	\ifthenelse{ \equal{#1}{} }{
+		\def\supname{#2} }{
+		\def\supname{\texorpdfstring{\href{#1}{#2}}{#2}}
+	}
+}
+\newcommand*{\cosupervisor}[2][]{
+	\def\cosupnamenolink{#2}
+	\ifthenelse{ \equal{#1}{} }{
+		\def\cosupname{#2} }{
+		\def\cosupname{\texorpdfstring{\href{#1}{#2}}{#2}}
+	}
+}
+\newcommand*{\supervisoraffiliation}[2][]{
+	\def\supaffilnolink{#2}
+	\ifthenelse{ \equal{#1}{} }{
+		\def\supaffil{#2} }{
+		\def\supaffil{\texorpdfstring{\href{#1}{#2}}{#2}}
+	}
+}
+\newcommand*{\cosupervisoraffiliation}[2][]{
+	\def\cosupaffilnolink{#2}
+	\ifthenelse{ \equal{#1}{} }{
+		\def\cosupaffil{#2} }{
+		\def\cosupaffil{\texorpdfstring{\href{#1}{#2}}{#2}}
+	}
+}
+\newcommand*{\otheraffiliation}[4][]{
+	\def\collaborating{1}
+	\def\otherlink{#1}
+	\def\otherlogo{#2}
+	\def\otherabbrev{#3}
+	\def\otheraffilnolink{#4}
+	\ifthenelse{ \equal{#1}{} }{
+		\def\otheraffil{#4} }{
+		\def\otheraffil{\texorpdfstring{\href{#1}{#4}}{#4}}
+	}
+}
+\newcommand*{\extraaffiliation}[4][]{
+	\def\collaborating{1}
+	\def\extralink{#1}
+	\def\extralogo{#2}
+	\def\extraabbrev{#3}
+	\def\extraaffilnolink{#4}
+	\ifthenelse{ \equal{#1}{} }{
+		\def\extraaffil{#4} }{
+		\def\extraaffil{\texorpdfstring{\href{#1}{#4}}{#4}}
+	}
+}
+\newcommand*{\supervisorposition}[1]{
+	\def\suppos{#1}
+}
+\newcommand*{\cosupervisorposition}[1]{
+	\def\cosuppos{#1}
+}
+\newcommand*{\fronttitle}[1]{
+	\def\frttitle{#1}
+}
+\newcommand*{\spinetitle}[1]{
+	\def\spntitle{#1}
+}
+\newcommand*{\degreename}[1]{
+	\def\degree{#1}
+}
+\newcommand*{\sciencefield}[1]{
+	\def\scifield{#1}
+}
+\newcommand*{\authorname}[2][]{
+	\def\authrnolink{#2}
+	\ifthenelse{ \equal{#1}{} }{
+		\def\authr{#2} }{
+		\def\authr{\texorpdfstring{\href{#1}{#2}}{#2}}
+	}
+}
+\newcommand*{\department}[2][]{
+	\def\deptnamenolink{#2}
+	\ifthenelse{ \equal{#1}{} }{
+		\def\deptname{#2} }{
+		\def\deptname{\texorpdfstring{\href{#1}{#2}}{#2}}
+	}
+}
+\newcommand*{\thesistype}[1]{
+	\ifthenelse{\equal{#1}{msc}}{
+		\def\ttype{Mestrado}
+		\def\tabbrev{MSc}
+		\def\tcnumber{2}
+		\setlength{\sidew}{54.3mm}
+		\graphicspath{{msc/},{logos/}}
+	}{\ifthenelse{\equal{#1}{phd}}{
+		\def\ttype{Doutoramento}
+		\def\tabbrev{PhD}
+		\def\tcnumber{3}
+		\setlength{\sidew}{56.5mm}
+		\graphicspath{{phd/},{logos/}}
+	}{
+		\PackageWarning{fcup-thesis}{ERROR: thesistype is not well defined. Only 'msc' or 'phd' are possible.}
+	}}
+}
+\usepackage{fp}
+\newcommand*{\titlespacing}[1]{
+	\FPmul\ttlspcfront{2.6}{#1}
+	\FPmul\ttlspcCD{1.5}{#1}
+}
+
+%----------------------------------------------------------------------------------------
+%	DEFAULT PARAMETERS (DO NOT CHANGE)
+%----------------------------------------------------------------------------------------
+
+\thesistype{msc}
+\spinewidth{13mm}
+\titlespacing{1.0}
+
+
+%----------------------------------------------------------------------------------------
+%	START DOCUMENT
+%----------------------------------------------------------------------------------------
+
+\input{vars}
+
+
+\begin{document}
+
+\pagestyle{empty}
+\setlength{\parindent}{0cm}
+
+
+%----------------------------------------------------------------------------------------
+%	ONE-SIDED TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+\hspace{25mm}
+\begin{minipage}[b][297mm][t]{125mm}
+	\vfill
+	\parbox[b][200mm][c]{125mm}{
+		\raggedright
+		\setstretch{\ttlspcfront}
+		{\HUGE \bfseries \frttitle} \\
+		\setstretch{1.2} {\large~\\}
+		{\LargeA \authr \\} 
+		{\large \degree \\}
+		{\small \deptname \\ \the\year \\}
+		{\small~\\}
+		{\large \bfseries Orientador \\}
+		{\small \supname,~\ifdefined\suppos \suppos,~\fi \supaffil \\}
+		{\small~\\}
+		\ifdefined\cosupaffilnolink
+		{\large \bfseries Coorientador \\}
+		{\small \cosupname,~\ifdefined\cosuppos \cosuppos,~\fi \cosupaffil \\}
+		\fi
+	}
+	\vspace{5mm}
+\end{minipage}
+\hfill
+\begin{minipage}[b][297mm][b]{\sidew}
+	\includegraphics[scale=0.97]{title}
+\end{minipage}
+
+\newpage
+
+
+
+%----------------------------------------------------------------------------------------
+%	EXAMINER PAGE
+%----------------------------------------------------------------------------------------
+
+
+\raggedleft
+\begin{minipage}[b][297mm][b]{\sidew}
+	\setstretch{1.0}
+	\ifdefined\extraaffilnolink
+		\includegraphics[width=52mm]{\extralogo}
+		\\[2mm]
+	\fi
+	\ifdefined\otheraffilnolink
+		\includegraphics[width=52mm]{\otherlogo}
+		\\[2mm]
+	\fi
+	\includegraphics[width=52mm]{fcup}
+
+	\setstretch{1.2}
+	{ \noindent\footnotesize Todas as correções determinadas \\
+		pelo júri, e só essas, foram efetuadas. \\
+		\\
+		O Presidente do Júri, \\
+		\\ 
+		\\
+		\\
+		Porto, \underline{\qquad\quad}/\underline{\quad\qquad}/\underline{\qquad\qquad} \\
+	}
+
+	\includegraphics[scale=0.97]{title}
+\end{minipage}
+
+\newpage
+
+
+%----------------------------------------------------------------------------------------
+%	CD PAGE
+%----------------------------------------------------------------------------------------
+
+
+\newcommand\CDTemplate{
+    \put(0,0){\parbox[b][297mm][c]{210mm}
+	{
+		\centering
+		\begin{tikzpicture}
+			\draw[gray,very thin] (0,0) circle (20.5mm);
+			\draw[gray,very thin] (0,0) circle (58.5mm);
+		\end{tikzpicture}
+	}}% 
+}
+
+
+\newcommand\CDContent{
+    \put(0,0){\parbox[b][297mm][c]{210mm}
+	{
+		\centering
+		\parbox[b][117mm][t]{117mm}
+		{
+			\parbox[b][40mm][c]{117mm}{
+				\centering
+				\ifdefined\collaborating \vspace{15mm}
+				\else \vspace{3mm} \fi
+				\ifdefined\extraaffilnolink 
+					\includegraphics[width=26mm,valign=t]{\extralogo} 
+				\fi 
+				\ifdefined\otheraffilnolink 
+					\includegraphics[width=26mm,valign=t]{\otherlogo} 
+				\fi
+				\includegraphics[width=26mm,valign=t]{fcup}
+				\ifdefined\collaborating \else
+					\\[2mm]
+					\includegraphics[width=34mm]{cd}
+				\fi
+			}
+		
+			\parbox[b][38mm][c]{38mm}{
+				\centering
+				\hspace{0mm}
+				\ifdefined\collaborating
+					\includegraphics[width=34mm]{cd}
+					\vspace{3mm}
+				\fi
+			}
+			\hfill
+			\parbox[b][38mm][c]{35mm}{
+				\setstretch{1.0}
+				\ifthenelse{\equal{\tcnumber}{2}}{
+					\vspace{4mm}
+					{\noindent\scriptsize O Presidente do Júri, \\
+					\\ 
+					\\
+					\\
+					Porto, \\
+					\\
+					\underline{\qquad\quad}/\underline{\quad\qquad}/\underline{\qquad\qquad} \\}}{}
+				\vspace{2mm}
+			}
+			
+			\centering
+			\parbox[b][35mm][b]{90mm}{
+				\centering
+				\setstretch{1.0}
+				{\small \bfseries \spntitle \\[2mm] } 
+				{\smaller \footnotesize \authrnolink \\[2mm]}
+				{\smaller \degree \\[1mm] 
+				 \deptnamenolink \\[2mm] }
+				{\large \the\year \\[1mm] }
+			}
+		}
+	}}% 
+}
+
+
+%----------------------------------------------------------------------------------------
+%	CD COVER PAGE
+%----------------------------------------------------------------------------------------
+
+
+\newcommand\CDCoverTemplate{
+    \put(0,0){\parbox[b][297mm][c]{210mm}
+	{
+		\centering
+		\vfill
+		
+		\begin{tikzpicture}
+			\draw[gray,very thin] (0,0) rectangle (120mm,120mm);
+		\end{tikzpicture}
+		
+		\vfill
+		
+		\begin{tikzpicture}
+			\draw[gray,very thin] (0,0) rectangle (150mm,117.5mm);
+		\end{tikzpicture}
+
+		\vfill
+	}}% 
+}
+
+
+\newcommand\CDCoverContent{
+    \put(0,0){\parbox[b][297mm][c]{210mm}
+	{
+		\centering
+		\vfill
+		
+		\parbox[b][120mm][b]{120mm}
+		{
+			\raggedleft
+			\hspace{12mm}
+			\begin{minipage}[b][120mm][t]{80mm}
+				\parbox[t]{80mm}{
+					\raggedleft \vspace{8mm}
+					\ifdefined\extraaffilnolink 
+						\includegraphics[width=26mm,valign=t]{\extralogo} 
+					\fi 
+					\ifdefined\otheraffilnolink 
+						\includegraphics[width=26mm,valign=t]{\otherlogo} 
+					\fi
+					\includegraphics[width=26mm,valign=t]{fcup}
+				}
+				\parbox[b][95mm][c]{80mm}{
+					\raggedright
+					\setstretch{\ttlspcCD}
+					{\LargeB \bfseries \frttitle} \\
+					\setstretch{1.2} {\smaller~\\}
+					{\small \authrnolink \\}
+					{\scriptsize \degree \\}
+					{\smaller \deptnamenolink \\}
+				}
+				\vspace{5mm}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[b][120mm][b]{0.41\sidew}
+				\includegraphics[scale=0.4]{front}
+			\end{minipage}
+		}
+		
+		\vfill
+		
+		\parbox[b][117.5mm][b]{150mm}
+		{
+			\centering
+			\includegraphics[width=25mm]{fcup}
+			\vspace{5mm}
+		}
+
+		\vfill
+	}}% 
+}
+
+
+%----------------------------------------------------------------------------------------
+%	BOOK FRONT COVER PAGE
+%----------------------------------------------------------------------------------------
+
+
+\newcommand\FrontCover{
+    \put(0,0){\parbox[b][297mm]{\coverwidth}{
+		\raggedleft\parbox[b][297mm]{210mm}{% FRONT STARTS HERE
+			\raggedleft \hspace{25mm}
+			\begin{minipage}[b][297mm][t]{125mm}
+				\parbox[t]{125mm}{
+					\raggedleft
+					\vspace{12mm}
+					
+					\includegraphics[width=52mm]{fcup}\hspace{19mm}
+					
+					\ifdefined\otheraffilnolink
+						\vspace{3mm}
+						\includegraphics[width=52mm]{\otherlogo}\hspace{19mm}
+					\fi
+
+					\ifdefined\extraaffilnolink
+						\vspace{3mm}
+						\includegraphics[width=52mm]{\extralogo}\hspace{19mm}
+					\fi
+				}
+				\vfill
+				\parbox[b][180mm][c]{125mm}{
+					\raggedright
+					\setstretch{\ttlspcfront}
+					{\HUGE \bfseries \frttitle} \\
+					\setstretch{1.2} {\large~\\}
+					{\LargeA \authrnolink \\}
+					{\large Dissertação de \ttype~apresentada à \\
+						Faculdade de Ciências da Universidade do Porto\ifdefined\otherabbrev
+							\ifdefined\extraabbrev , \otheraffilnolink~e \extraaffilnolink
+							\else ~e \otheraffilnolink \fi
+						\else	 
+							\ifdefined\extraabbrev ~e \extraaffilnolink \fi 
+						\fi~em \\
+					\scifield \\}
+					{\LargeA \the\year \\}
+				}
+				\vspace{5mm}
+			\end{minipage}
+			\hfill
+			\begin{minipage}[b][297mm][b]{\sidew}
+				\includegraphics[scale=0.97]{front}
+			\end{minipage}
+		}
+	}} % FRONT STOPS HERE
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	BOOK BACK COVER PAGE
+%----------------------------------------------------------------------------------------
+
+
+\newcommand\BackCover{
+    \put(0,0){\parbox[b][297mm]{\coverwidth}{% BACK STARTS HERE
+		\raggedright
+		\begin{minipage}[b][297mm][b]{\sidew}
+			\raggedright
+			\hspace{1mm}
+			\includegraphics[width=52mm]{fcup}
+			
+			\raggedleft
+			\vspace{3mm}
+			\includegraphics[scale=0.97]{back}
+		\end{minipage}
+	}}% BACK ENDS HERE
+}
+
+
+%----------------------------------------------------------------------------------------
+%	BOOK SPINE/RIBBON 
+%----------------------------------------------------------------------------------------
+
+
+\newcommand\BlueRibbon{
+    \put(0,0){
+    \parbox[b][297mm][t]{\coverwidth}{% RIBBON BEGINS HERE
+	\centering
+	\vspace{19mm}
+	\fcolorbox{white}{fcupblue}{%
+		\begin{minipage}[c][10mm][c]{3\spinew}
+			\centering \bfseries \small \color{white}
+			\tcnumber º \\ CICLO
+		\end{minipage}
+	}% RIBBON ENDS HERE
+}}}
+
+
+\newcommand\Spine{
+    \put(-1,0){\parbox[b][297mm][t]{\coverwidth}{% SPINE BEGINS HERE
+		\hspace{210mm} 
+		\begin{minipage}[c][297mm][t]{\spinew}
+			\centering
+
+			\vspace{1mm}
+			\begin{turn}{-90} 
+				\parbox[t]{31mm}{
+					\raggedright
+					\HugeA \tabbrev
+				}
+			\end{turn}
+
+			\setstretch{1.0} 
+			\small FCUP \\
+			\ifdefined\otherabbrev \otherabbrev \\ \fi
+			\ifdefined\extraabbrev \extraabbrev \\ \fi
+			\the\year
+
+			\vspace{10mm}
+			\hspace{0mm}
+			\includegraphics[width=0.7\spinew]{up}
+			\vspace{10mm}
+
+			\begin{turn}{-90} 
+				\parbox[t]{95mm}{
+					\setstretch{1.0} \raggedright
+					\normalsize \bfseries \spntitle
+				}
+			\end{turn}
+
+			\vfill
+
+			\begin{turn}{-90} 
+				\parbox[t]{55mm}{
+					\setstretch{1.0} \raggedright
+					\small \bfseries \authrnolink
+				}
+			\end{turn}
+
+			\vspace{4mm}
+			\hspace{0mm}
+			\includegraphics[width=0.7\spinew]{fc}
+			\vspace{5mm}
+		\end{minipage}
+	}} % SPINE ENDS HERE
+}
+
+
+%----------------------------------------------------------------------------------------
+%	CD PAGES ASSEMBLY
+%----------------------------------------------------------------------------------------
+
+\AddToShipoutPicture*{\CDTemplate}
+\AddToShipoutPicture*{\CDContent}
+
+\phantom{~}
+\newpage
+
+
+\AddToShipoutPicture*{\CDCoverTemplate}
+\AddToShipoutPicture*{\CDCoverContent}
+
+\phantom{~}
+\newpage
+
+%----------------------------------------------------------------------------------------
+%	BOOK COVER ASSEMBLY
+%----------------------------------------------------------------------------------------
+
+\eject \pdfpagewidth=\coverwidth \pdfpageheight=297mm
+
+\AddToShipoutPicture*{\BackCover}
+\AddToShipoutPicture*{\FrontCover}
+\AddToShipoutPicture*{\BlueRibbon}
+\AddToShipoutPicture*{\Spine}
+
+\phantom{~}
+
+
+
+\end{document}
