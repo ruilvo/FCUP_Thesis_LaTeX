@@ -6,11 +6,16 @@ Latex version of the thesis layout available at [http://sigarra.up.pt/fcup](http
 
 All font rights belong to Microsoft.
 
+
 ## Requisites and Compiling
 
 Step 1: Edit the front/vars.tex file
+
 Step 2: Compile  front/main.tex file
+
 Step 3: Edit     main.tex       file
+
+
 
 And now edit at will!
 
