@@ -8,15 +8,15 @@
 
 % Write text in here
 % Use \subsection and \subsubsection to organize text
-Chapter contets here.
 
-Lorem ipsum dolor sit amet, pri ut diam esse, iudico fierent pertinacia vim ad, cu affert deleniti invenire sed. Elitr luptatum repudiandae ut eos. An pri eros mucius legimus, eu wisi noster his. No omnes voluptatibus per, sea at paulo sonet quaerendum, id sea nibh albucius salutatus. Eam ne suas agam voluptatibus, vix at semper intellegat, ut movet verear habemus has \cite{Nobody06}.
+Welcome to the tutorial on how to use this thesis model. This is not to teach you how to use \LaTeX. For that read a tutorial. But this aims to teach you how to do the basic stuff you will need in order to produce a decent document.
 
-Nec ea veri aperiri atomorum, duo probo audire aperiri ne. Utamur percipit id pro, in tota inani pro. Has iuvaret nominati id. Patrioque assueverit pro cu, natum affert exerci qui no. Ne hinc homero mediocrem eum, oblique meliore sea an.
+\section{Citations}
+You can add extra info to you references, like \cite[chapter 3]{Nobody06}
 
-Ex ius illud nihil, no singulis constituto incorrupte mea, nulla insolens ea has. Mea ex nonumy luptatum. Melius volumus no per, at tantas corpora pro. Vis mollis meliore ad, graeci atomorum his id. His ludus atomorum deseruisse ex. Ut mei graece saperet democritum \ref{fig:FCUPfatCat}. 
+\section{Figures}
 
-Nam essent minimum ne, ad nam facilis forensibus. Te scripta omnesque ius. Sale perfecto mediocritatem an vis, ne his unum placerat, cu mei doming cetero delectus. Duo falli iudico concludaturque id, et vim suscipit senserit, qui noster indoctum democritum te. Ut quo paulo legendos expetendis, ut illum harum voluptatibus ius, prima dolores oporteat cu usu.
+Let us start with a figure with two subfigures like in \ref{fig:FCUPfatCat}. 
 
 \begin{figure}
 	\centering
@@ -34,34 +34,46 @@ Nam essent minimum ne, ad nam facilis forensibus. Te scripta omnesque ius. Sale 
 	\caption{\label{fig:FCUPfatCat}FCUP's fat cat.} 
 \end{figure}
 
-Vix ex alii ponderum percipitur, laudem audiam his at, at dicit delectus sed. No vel affert docendi offendit. Ea quod tincidunt pro. Id clita veniam nam, an his diceret prodesset. Eligendi neglegentur vel et. Ne nobis appareat his, has ei alienum epicurei omittantur, tempor prompta feugait vim at.
 
-Libris comprehensam est ad, eos cu diam atqui. Eos at vide iusto posidonium, omnes tacimates ad mei. Te alii propriae laboramus eos, mea prima timeam fierent ad, nam et nostro efficiantur accommodare. Ad sea probatus phaedrum, case corrumpit sit id, vix ex alterum repudiandae. Duo dolorum euripidis at, cu eos dolores hendrerit temporibus, vel oratio alterum sadipscing ex. Nulla molestie accusata per te, pri percipit rationibus at, vis modo commune te.
+Or two figures side by side like \ref{fig:FCUPfatcatSide1} and \ref{fig:FCUPfatcatSide2}.
 
-Te tantas persecuti mea. Mel et nostrum voluptua, ut duo nisl ludus volumus. Pri agam labitur te. An quis veritus appetere duo, mei laoreet praesent no. Cu quem postea vocent mel, essent eruditi scaevola quo ea.
+\begin{figure}
+\centering
+\begin{minipage}{.49\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{Figures/ChapterTemplate/20160517_123603.jpg}
+  \captionof{figure}{\label{fig:FCUPfatcatSide1}FCUP's fat cat doing what cats do.}
+\end{minipage}%
+\hfill
+\begin{minipage}{.49\textwidth}
+  \centering
+  \includegraphics[width=.95\linewidth]{Figures/ChapterTemplate/20160517_123609.jpg}
+  \captionof{figure}{\label{fig:FCUPfatcatSide2}FCUP's fat cat.} 
+\end{minipage}
+\end{figure}
 
-Ne pri maiestatis quaerendum, ei nec hinc veniam dicunt. Electram concludaturque eos ut. Eam nisl semper ad, ut vix bonorum imperdiet voluptatibus, nam veri fabulas convenire ex. Ad vix dicat noster, agam utamur erroribus ea est, mucius ancillae scriptorem sea eu. Eos ea nominati conclusionemque, usu esse nonumy facilisis cu.
+\section{Math}
 
-Atqui tamquam eloquentiam ut qui. Pro te offendit honestatis, forensibus vituperatoribus pri ea. Et mea alii eligendi referrentur, primis urbanitas per et. Nec te graeci doctus. Utinam maiorum est at. An iracundia ullamcorper definitionem mea.
 
-Nec alia dicunt te, in malis appareat his. Cu sumo adhuc scripserit nec, usu te mundi decore tamquam. Sea te atomorum laboramus expetendis, virtute gloriatur signiferumque pri et. Nostro eirmod perpetua an mea, id cum graecis persecuti consequuntur, eam volumus singulis scriptorem ut. Has tritani inimicus in, ea zril munere repudiandae pro.
+The following equation uses a custom mathematical operator defined in line 166 of the stock main.tex:
+\begin{equation}
+\begin{aligned}
+			\meshgrid_{\mathbf{x}_{1},\mathbf{x}_{2}}\mathbf{x}_{1}&=\begin{bmatrix}a_{1} & b_{1} & c_{1}\\
+a_{1} & b_{1} & c_{1}
+\end{bmatrix}\\
+			\meshgrid_{\mathbf{x}_{1},\mathbf{x}_{2}}\mathbf{x}_{2}&=\begin{bmatrix}a_{2} & a_{2} & a_{2}\\
+b_{2} & b_{2} & b_{2}
+\end{bmatrix}
+\end{aligned}
+\end{equation}
 
-Nam at homero aliquid, has sale etiam dicit ad. Electram argumentum eu eum, usu ne quis aliquando. Ex mei brute vocibus. Et vim dictas iriure oporteat, sea appetere ullamcorper te, ea pro altera tibique. Eam expetendis suscipiantur ea. Velit deserunt volutpat sea cu, tollit facilisi ei vis.
+And this is an equation with multiple lines:
+\begin{equation}
+\begin{aligned}
+&I_{0}=I^{\prime}+I^{\prime\prime}\cos(\varPsi)   \\
+&I_{\pi/2}=-I^{\prime\prime}\sin(\varPsi)                \\
+&I_{\pi}=I^{\prime}-I^{\prime\prime}\cos(\varPsi)   \\
+&I_{3\pi/2}=I^{\prime\prime}\sin(\varPsi)
+\end{aligned}
+\end{equation}
 
-Sed id ignota placerat mediocrem, mel ut semper efficiendi instructior. Ne veri melius volumus vel. Sit elit aliquam cu. Dico tritani disputando id his, natum fugit impedit has no. Nam ex fugit regione. Nam honestatis theophrastus in, ut mei quas graecis blandit. At veniam tempor imperdiet eam, ad ius facer interpretaris.
-
-Eos autem omittantur at. Eum dolorem facilis no, sonet omnium has id. Ea est option fastidii recteque, ne reque malis reformidans mel. Mei commodo civibus persecuti at, ea augue ceteros elaboraret mea, pertinacia omittantur ad sea.
-
-Ne magna debet philosophia qui, fabellas sensibus ex vel, mei ut dicant vidisse molestie. Aliquam denique id usu, vis paulo ubique senserit et, mandamus definiebas scriptorem est no. Ex utinam essent deserunt cum, solum reque torquatos sit ut. Omnis verear imperdiet eum et. Sea hinc ferri libris in. Te error quaestio accommodare cum.
-
-Quem honestatis repudiandae per in, no has eros iracundia. Eum te velit saperet accommodare. Nam in melius integre, solet possim vocibus ad usu. Timeam verterem vulputate ad eam, viris legere aliquid ea vis. Usu ut tation eirmod periculis, ludus deleniti deterruisset eam at. Ea exerci consequuntur nec, facete civibus splendide ex sea.
-
-Sumo vituperata an mea, ut cibo delicata mel. Has audire qualisque et, vero consul fuisset ne his, quo et tollit doctus mnesarchum. Putent maluisset at eos, mel ad everti aliquam, et sit clita electram molestiae. Ius in adhuc animal. Quo id eros mazim iriure, ea per audire minimum omittantur. Id has alii choro incorrupte, solum nonumes ex vel, cu atomorum similique mei.
-
-Viris partiendo instructior pri cu, te cum vitae saperet phaedrum. Mei dolor aperiam accommodare te. Summo pericula mediocrem an cum, debitis hendrerit signiferumque cu vis. Qui ne regione alterum mandamus, autem augue mediocrem eum at. Eum ex discere noluisse postulant, mea ad persecuti reformidans instructior. In his dicam delenit epicurei, porro omittantur vel ad, et mucius sensibus nec.
-
-An mea modus adversarium. Odio facer cum ea. Oblique platonem evertitur ut pro, no assum patrioque similique cum. Nullam viderer mea at, no sale augue sit, aeque decore aliquip mel cu. Vero voluptaria no est, est in sint eius antiopam.
-
-Eam affert exerci omnium et, vis admodum contentiones interpretaris ut. Idque laboramus duo eu. Vide docendi atomorum cu eos. Mea quidam abhorreant at, tale zril disputationi vix ne. Eu adhuc sonet pri, vix nulla dolor at. Ei qui solum molestiae, mea cu vivendo constituam.
-
-Id laboramus definitionem duo. Et elit vocent antiopam eos. Brute facilisi complectitur mel no, timeam habemus omnesque id nam, ius mutat consectetuer ut. Te mel habemus delicata scripserit. Ei fuisset intellegat per. Mei ex duis augue voluptatum.
