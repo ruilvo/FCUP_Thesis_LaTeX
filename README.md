@@ -19,7 +19,7 @@ Step 3: Edit     main.tex       file
 
 And now edit at will!
 
- **_TThe stock main.pdf will include how to do most stuff, so cope/read it before making other modifications!_**
+ **_The stock main.pdf will include how to do most stuff, so cope/read it before making other modifications!_**
  
  Also read the front/readme.md for further info!! (or just open that folder on github and scroll down).
  
