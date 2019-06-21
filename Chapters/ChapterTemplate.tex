@@ -53,7 +53,8 @@ Or two figures side by side like \ref{fig:FCUPfatcatSide1} and \ref{fig:FCUPfatc
 \end{figure}
 
 
-Or a figure with some text on the side, like \ref{fig:FCUPfatcatSide3}
+Or a figure with some text on the side, like \ref{fig:FCUPfatcatSide3}, or even a Figure wrapped around in text, as seen on Figure \ref{fig:FCUPfatcatSide4}
+
 \begin{figure}
 \centering
 \begin{minipage}{.49\textwidth}
@@ -67,7 +68,13 @@ Or a figure with some text on the side, like \ref{fig:FCUPfatcatSide3}
 \end{minipage}
 \end{figure}
 
-
+This is where the table goes with text wrapping around it. You may 
+embed tabular environment inside wraptable environment and customize as you like: 
+\begin{wrapfigure}{r}{8cm}
+  \includegraphics[width=8cm]{Figures/ChapterTemplate/20160517_123609.jpg}
+  \captionof{figure}{\label{fig:FCUPfatcatSide4}FCUP's fat cat.} 
+\end{wrapfigure} 
+\lipsum[2-3]
 
 \section{Math}
 
