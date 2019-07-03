@@ -84,20 +84,23 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 \definecolor{orange}{RGB}{255,127,0}
 
-\lstset{language=Python,
-                %keywordstyle=\color{blue},
-                %stringstyle=\color{red},
-                %commentstyle=\color{magenta},
-		   numberstyle=\tiny\color{codegray},
-                keywordstyle=\color{mauve},
-                commentstyle=\color{gray},
-                stringstyle=\color{orange},
-                backgroundcolor=\color{backcolour},
-                frame=none,
-                numbers=left,
-                aboveskip=5mm,
-                belowskip=5mm,
-                breaklines=true
+\lstdefinestyle{Python}{
+        language=Python,
+         numberstyle=\small,
+         stepnumber=2,
+         numbersep=10pt,
+         basicstyle={\small\ttfamily},
+         keywordstyle    = \color{blue},
+         commentstyle    = \color{red}\ttfamily,
+         stringstyle=\color{orange},
+         tabsize=2,
+         columns=fullflexible,
+         backgroundcolor=\color{backcolour},
+         frame=none,
+         numbers=left,
+         aboveskip=5mm,
+         belowskip=5mm,
+         breaklines=true
 }
 
 %Overload epigraph command
