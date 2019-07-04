@@ -47,4 +47,6 @@ def main(paths):
 
     return differences if differences else "No differences between labels and refs"
 
-print(main(['Chapters','Appendices']))
+
+if __name__ == '__main__':
+    main([])
