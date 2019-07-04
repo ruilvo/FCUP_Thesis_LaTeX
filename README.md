@@ -15,6 +15,7 @@ Step 2: Compile  front/main.tex file
 
 Step 3: Edit     main.tex       file
 
+Step 4: If you want to make sure that all of your labels are being used, run the python script check_references.py.
 
 
 And now edit at will!
@@ -26,4 +27,3 @@ And now edit at will!
  Credits to the original owner who's indentity seems to have been lost.
 
 
-If you want to make sure that all of your labels are being used, run the python script check_references.py.
