@@ -15,7 +15,7 @@ Step 2: Compile  front/main.tex file
 
 Step 3: Edit     main.tex       file
 
-Step 4: If you want to make sure that all of your labels are being used, run the python script check_references.py.
+Step 4: If you want to make sure that all of your labels are being used, check inside the scripts folder for a way to verify it.
 
 
 And now edit at will!
