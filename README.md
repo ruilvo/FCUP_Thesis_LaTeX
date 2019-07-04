@@ -24,3 +24,6 @@ And now edit at will!
  Also read the front/readme.md for further info!! (or just open that folder on github and scroll down).
  
  Credits to the original owner who's indentity seems to have been lost.
+
+
+If you want to make sure that all of your labels are being used, run the python script check_references.py.
