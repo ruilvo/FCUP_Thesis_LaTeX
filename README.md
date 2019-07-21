@@ -20,7 +20,7 @@ Step 4: If you want to make sure that all of your labels are being used, check i
 
 And now edit at will!
 
- **_The stock main.pdf will include how to do most stuff, so cope/read it before making other modifications!_**
+ **_The stock main.pdf will include how to do most stuff, so copy/read it before making other modifications!_**
  
  Also read the front/readme.md for further info!! (or just open that folder on github and scroll down).
  
