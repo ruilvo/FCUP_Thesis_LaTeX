@@ -16,6 +16,7 @@ For the Arial font and all packages to work, **_main.tex_** must be executed wit
 xelatex -interaction=nonstopmode -file-line-error main
 ```
 in the workspace root to generate the output pdf. Due to the use of external fonts, compilation may take more than a full minute.
+Or just use the XeLaTeX compiler on whatever LaTeX tool you use (TeXWorks, TeXStudio, VSCode, etc).
 
 
 ## Contents
