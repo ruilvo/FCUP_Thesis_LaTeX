@@ -27,3 +27,9 @@ And now edit at will!
  Credits to the original owner who's indentity seems to have been lost.
 
 
+
+## Contributing guidelines:
+    - Apply the desired changes to the documents;
+    - Comment them accordingly;
+    - Compile the pdf document;
+    - Create the Pull request
