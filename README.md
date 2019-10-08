@@ -1,6 +1,7 @@
 # FCUP thesis layout 
 
-A thesis model for FCUP thesis, especially for physics.
+A thesis model for FCUP MsC and PhD thesis. In the Chapters folders you can find a quick overview on how to use the model
+and some useful commands/tips for working within this framework
 
 Latex version of the thesis layout available at [http://sigarra.up.pt/fcup](https://sigarra.up.pt/fcup/pt/web_base.gera_pagina?p_pagina=*admiss%c3%a3o%20a%20provas%20acad%c3%a9micas).
 
