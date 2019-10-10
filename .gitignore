@@ -1,3 +1,7 @@
+# Created by https://www.gitignore.io/api/latex
+# Edit at https://www.gitignore.io/?templates=latex
+
+### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -40,6 +44,10 @@
 *.synctex.gz(busy)
 *.pdfsync
 
+## Build tool directories for auxiliary files
+# latexrun
+latex.out/
+
 ## Auxiliary and intermediate files from other packages:
 # algorithms
 *.alg
@@ -59,6 +67,9 @@ acs-*.bib
 
 # changes
 *.soc
+
+# comment
+*.cut
 
 # cprotect
 *.cpt
@@ -103,6 +114,9 @@ acs-*.bib
 *.gls
 *.glsdefs
 
+# uncomment this for glossaries-extra (will ignore makeindex's style files!)
+# *.ist
+
 # gnuplottex
 *-gnuplottex-*
 
@@ -130,11 +144,13 @@ acs-*.bib
 # listings
 *.lol
 
+# luatexja-ruby
+*.ltjruby
+
 # makeidx
 *.idx
 *.ilg
 *.ind
-*.ist
 
 # minitoc
 *.maf
@@ -184,6 +200,9 @@ sympy-plots-for-*.tex/
 *.pytxcode
 pythontex-files-*/
 
+# tcolorbox
+*.listing
+
 # thmtools
 *.loe
 
@@ -195,8 +214,15 @@ pythontex-files-*/
 # todonotes
 *.tdo
 
+# vhistory
+*.hst
+*.ver
+
 # easy-todo
 *.lod
+
+# xcolor
+*.xcp
 
 # xmpincl
 *.xmpi
@@ -222,6 +248,9 @@ TSWLatexianTemp*
 # Texpad
 .texpadtmp
 
+# LyX
+*.lyx~
+
 # Kile
 *.backup
 
@@ -238,5 +267,12 @@ TSWLatexianTemp*
 # standalone packages
 *.sta
 
-# generated if using elsarticle.cls
-*.spl
+### LaTeX Patch ###
+# glossaries
+*.glstex
+
+# End of https://www.gitignore.io/api/latex
+
+# IDE settings
+.vscode
+.gitmodules
