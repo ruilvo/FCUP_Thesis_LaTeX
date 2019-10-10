@@ -5,7 +5,7 @@
 % %%%%% IMPORTANT %%%%%
 % 1) Edit Front/vars.tex
 % 2) Compile Front/main.tex
-% 
+%
 % BEFORE ANYTHING ELSE
 
 
@@ -15,11 +15,11 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt, twoside, table,xcdraw]{Thesis} % The default font size and two-sided printing 
-% For a one-sided printing change the flag "twoside" to "oneside" 
+\documentclass[11pt, twoside, table,xcdraw]{Thesis} % The default font size and two-sided printing
+% For a one-sided printing change the flag "twoside" to "oneside"
 
 \usepackage{pdfpages}
-\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers'
 \usepackage[portuguese,english]{babel}
 \usepackage{url} %decent url breaking
 \def\UrlBreaks{\do\/\do-}
@@ -50,7 +50,7 @@
 \usepackage{wrapfig}
 \usepackage{lipsum}
 %\usepackage[hyperpageref]{backref}
-%\renewcommand*{\backref}[1]{} 
+%\renewcommand*{\backref}[1]{}
 %\renewcommand*{\backrefalt}[4]{
 % \ifcase #1
 % Not cited.
@@ -67,7 +67,7 @@
 \usepackage{mathpazo}
 \setstretch{1.5}
 
-\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+\graphicspath{{Figures/}} % Specifies the directory where pictures are stored
 
 %%% BIB STYLE
 %\bibliographystyle{apsrev4-1-etal} % With emphasized titles. ORIGINAL
@@ -131,7 +131,7 @@
      \begin{\sourceflush}\episourcefont#2\end{\sourceflush}%
      \endvarwidth
    }%
-   \ifdim\wd\epi@sourcebox>\epi@finalwidth 
+   \ifdim\wd\epi@sourcebox>\epi@finalwidth
      \epi@finalwidth=\wd\epi@sourcebox
    \fi
    \leavevmode\vbox{
@@ -210,22 +210,22 @@
 \supervisor[mailto:example@fc.up.pt]{FirstName \textsc{LastName}} % Your s.upervisor's name \supname \supnamenolink
 %\cosupervisor[mailto:name@host.com]{John \textsc{Doe}} % Your supervisor's name \cosupname \cosupnamenolinkTo
 % To hide the Co-Supervisor field, just comment out \cosupervisor
-\degree{MSc. Engineering Physics} % Your degree name \degreename 
+\degree{MSc. Engineering Physics} % Your degree name \degreename
 \authors[mailto:example@fc.up.pt]{MyName \textsc{MyLastName}} % Your name \authornames \authornamesnolink
 \addresses{} % Your address \addressname
 \subject{Physics} % Your subject area \subjectname
-\keywords{physics} % Keywords for your thesis \keywordnames 
+\keywords{physics} % Keywords for your thesis \keywordnames
 \university{Universidade do Porto} % Your university's name \univname \univnamenolink
-\UNIVERSITY{UNIVERSIDADE DO PORTO} % Your university's name in capitals \UNIVNAME \UNIVNAMEnolink             
+\UNIVERSITY{UNIVERSIDADE DO PORTO} % Your university's name in capitals \UNIVNAME \UNIVNAMEnolink
 \department{Departamento de Física e Astronomia} % Your department's name \deptname \deptnamenolink
 \DEPARTMENT{DEPARTAMENTO DE FÍSICA E ASTRONOMIA} % Your department's name in capitals \DEPTNAME \DEPTNAMEnolink
-% To hide the Department field, just comment out \DEPARTMENT and \department        
-%\group[http://www.groupurl.com]{Research Group} % Your research group's name \groupname \groupnamenolink           
+% To hide the Department field, just comment out \DEPARTMENT and \department
+%\group[http://www.groupurl.com]{Research Group} % Your research group's name \groupname \groupnamenolink
 %GROUP[http://www.groupurl.com]{RESEARCH GROUP} % Your research group's name in capitals \GROUPNAME \GROUPNAMEnolink
-% To hide the Group field, just comment out \GROUP and \group   
+% To hide the Group field, just comment out \GROUP and \group
 \faculty{Faculdade de Ciências da Universidade do Porto} % Your faculty's name \facname \facnamenolink
 \FACULTY{FACULDADE DE CIÊNCIAS DA UNIVERSIDADE DO PORTO} % Your faculty's name in capitals \FACNAME \FACNAMEnolink
-% To hide the Faculty field, just comment out \FACULTY and \Faculty     
+% To hide the Faculty field, just comment out \FACULTY and \Faculty
 % NOTE: To remove links write \cmd{name} instead of \cmd[link]{name}
 % NOTE: For aesthetics, at least one of these fields must be set: faculty, group or department
 
@@ -242,7 +242,7 @@
 %----------------------------------------------------------------------------------------
 
 \begin{document}
-	
+
 \pagestyle{empty}
 \includepdf[pages={1},pagecommand={},scale=1]{Front/main}
 \cleardoublepage
@@ -274,7 +274,7 @@
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
 \begin{acknowledgements}
-	
+
 Acknowledge ALL the people!
 
 \end{acknowledgements}
@@ -295,7 +295,7 @@ This thesis is about something, I guess....
 %	ABSTRACT PAGE (PORTUGUESE)
 %----------------------------------------------------------------------------------------
 \begin{abstract}[
-	thesistitle={Titulo da Tese em Portugês}, 
+	thesistitle={Titulo da Tese em Portugês},
 	title={Resumo},
 	degree={Mestrado Integrado em Engenharia Física},
 	nameconnector={por}]
@@ -303,7 +303,7 @@ This thesis is about something, I guess....
 
 Este tese é sobre alguma coisa
 
-\end{otherlanguage}	
+\end{otherlanguage}
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
