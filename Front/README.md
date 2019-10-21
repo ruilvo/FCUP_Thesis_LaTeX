@@ -15,9 +15,11 @@ For the Arial font and all packages to work, **_main.tex_** must be executed wit
 ```
 xelatex -interaction=nonstopmode -file-line-error main
 ```
+
 in the workspace root to generate the output PDF. Due to the use of external fonts, compilation may take more than a full minute.
 
 Alternatively, a simpler way would be to use an online service like [**ShareLaTeX**](https://www.sharelatex.com) to obtain the layout pages. Download a copy of the repository under _Clone or download > Download ZIP_. Then, in ShareLaTeX website, import the downloaded .zip file in _New project > Upload project_, making sure that the compiler is set to _XeLaTeX_ under _Menu > Settings_.
+
 
 
 ## Contents
