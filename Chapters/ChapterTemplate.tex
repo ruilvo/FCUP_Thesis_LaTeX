@@ -20,7 +20,8 @@ to do the basic stuff you will need in order to produce a decent document.
 
 \section{Citations}
 You can add extra info to you references, like~\cite[section 3]{Fienup1982}. You
-can also call them by author, like saying~\citet{Fienup1982}.
+can also call them by author, like saying~\citet{Fienup1982}\unsure{You can make
+personal notes like this}.
 
 \section{Figures}
 
@@ -64,7 +65,7 @@ and~\ref{fig:FCUPfatcatSide2}.
 
 
 Or a figure with some text on the side, like~\ref{fig:FCUPfatcatSide3}, or even
-a Figure wrapped around in text, as seen on Figure~\ref{fig:FCUPfatcatSide4}.
+a figure wrapped around in text, as seen on Figure~\ref{fig:FCUPfatcatSide4}.
 
 \begin{figure}
 \centering
@@ -114,7 +115,9 @@ and shorthand macros.
 \begin{figure}
     \centering
       \includegraphics[width=0.5\columnwidth]{ChapterTemplate/image-normal.pdf}
-      \caption{The test SVG image, as it is seen in Inkscape (exported to PDF \emph{without} \LaTeX\ option).}
+      \caption[The test SVG image, as it is seen in Inkscape]
+      {The test SVG image, as it is seen in Inkscape (exported to PDF
+      \emph{without} \LaTeX\ option).}
       \label{fig:normal}
 \end{figure}
 
@@ -161,7 +164,7 @@ of preamble.tex:
 \end{aligned}
 \end{equation}
 
-The following equation uses the custom ceil and floor operator defined in line 168 of the stock main.tex:
+The following equation uses the custom ceil and floor operator defined in line 86 of the stock preamble.tex:
 
 \begin{equation}
 x = \floor*{\frac{y}{2}} + \ceil*{\frac{w}{2}}

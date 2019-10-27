@@ -9,9 +9,6 @@
 % Fix top page geometry on long titles
 \setlength{\headheight}{14pt}  %Try fix error
 
-% For dummy text. You don't need package in the final version anyway
-\usepackage{lipsum}
-
 % Language hyphenation and typographical rules
 \usepackage[portuguese,english]{babel}
 %Custom hyphenization
@@ -184,7 +181,11 @@
 % WARNING: It eliminates whitespaces in front of it.
 % You can add trailing {} to avoid.
 
-\usepackage[colorinlistoftodos,prependcaption,textsize=tiny, textwidth=3cm]{todonotes}
+\usepackage[colorinlistoftodos,
+    prependcaption,
+    textsize=tiny,
+    textwidth=2cm]
+        {todonotes}
 % You can add:
 % \setlength{\marginparwidth}{3cm}\reversemarginpar
 % before \todo on each command for a different effect
