@@ -1,248 +1,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Masters/Doctoral Thesis
 %
-%
 % %%%%% IMPORTANT %%%%%
 % 1) Edit Front/vars.tex
 % 2) Compile Front/main.tex
+% 3) Edit vars.tex
 %
 % BEFORE ANYTHING ELSE
-
-
+% You can also set some interesting stuff in the preamble.tex file
+% If you know what you're doing.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
-
-\documentclass[11pt, twoside, table,xcdraw]{Thesis} % The default font size and two-sided printing
+% The default font size and two-sided printing
 % For a one-sided printing change the flag "twoside" to "oneside"
-
-\usepackage{pdfpages}
-\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers'
-\usepackage[portuguese,english]{babel}
-\usepackage{url} %decent url breaking
-\def\UrlBreaks{\do\/\do-}
-\usepackage[section]{placeins} %for \FloatBarrier
-\usepackage{lipsum} % For dummy text
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{fancybox}
-\usepackage{ragged2e}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{braket}
-\usepackage[bottom, perpage, symbol]{footmisc}
-\usepackage{csquotes} %added for \begin{displayquote}
-\usepackage{verbatim} %added for \begin{comment}
-\usepackage{epigraph, varwidth} %added for fancy chapter start quotes
-\usepackage{wrapfig} %added for text wrapped around pictures https://pt.sharelatex.com/learn/Wrapping_text_around_figures
-\usepackage{listings} %for code listings
-\usepackage{color}
-\usepackage{multirow}
-\usepackage{pdfpages}
-\usepackage{algpseudocode}
-\usepackage{xargs}    % Use more than one optional parameter in a new commands
-\usepackage[colorinlistoftodos,prependcaption,textsize=tiny, textwidth=3cm]{todonotes}
-\usepackage{notoccite}
-\usepackage{hyperref}
-\usepackage{wrapfig}
-\usepackage{lipsum}
-%\usepackage[hyperpageref]{backref}
-%\renewcommand*{\backref}[1]{}
-%\renewcommand*{\backrefalt}[4]{
-% \ifcase #1
-% Not cited.
-% \or
-% Cited on page~#2.
-% \else
-% Cited on pages~#2.
-% \fi
-%}
-\hypersetup{colorlinks,citecolor=blue,urlcolor=blue,linkcolor=blue, breaklinks=true}
-%%% FONT PACKAGES
-% - fourier
-% - mathpazo ( palatino for Computer Modern on math )
-\usepackage{mathpazo}
-\setstretch{1.5}
-
-\graphicspath{{Figures/}} % Specifies the directory where pictures are stored
-
-%%% BIB STYLE
-%\bibliographystyle{apsrev4-1-etal} % With emphasized titles. ORIGINAL
-%\bibliographystyle{apsrev4-1} %this one isn't available, for some reason
-\bibliographystyle{IEEEtranN}
+\documentclass[11pt, twoside, table,xcdraw]{Thesis}
 
 
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-\definecolor{orange}{RGB}{255,127,0}
+%-------------------------------------------------------------------------
+%   PREAMBLE AND SETTINGS
+%-------------------------------------------------------------------------
+% Add the preamble. You can change various settings in here
+\input{preamble}
 
-\lstdefinestyle{Python}{
-        language=Python,
-         numberstyle=\small,
-         stepnumber=2,
-         numbersep=10pt,
-         basicstyle={\small\ttfamily},
-         keywordstyle    = \color{blue},
-         commentstyle    = \color{red}\ttfamily,
-         stringstyle=\color{orange},
-         tabsize=2,
-         columns=fullflexible,
-         backgroundcolor=\color{backcolour},
-         frame=none,
-         numbers=left,
-         aboveskip=5mm,
-         belowskip=5mm,
-         breaklines=true
-}
-
-%Overload epigraph command
-\renewcommand{\epigraphsize}{\small}
-\setlength{\epigraphwidth}{0.90\textwidth}
-\renewcommand{\textflush}{flushright}
-\renewcommand{\sourceflush}{flushright}
-% A useful addition
-\newcommand{\epitextfont}{\itshape}
-\newcommand{\episourcefont}{\scshape}
-
-\makeatletter
-\newsavebox{\epi@textbox}
-\newsavebox{\epi@sourcebox}
-\newlength\epi@finalwidth
-\renewcommand{\epigraph}[2]{%
-  \vspace{\beforeepigraphskip}
-  {\epigraphsize\begin{\epigraphflush}
-   \epi@finalwidth=\z@
-   \sbox\epi@textbox{%
-     \varwidth{\epigraphwidth}
-     \begin{\textflush}\epitextfont#1\end{\textflush}
-     \endvarwidth
-   }%
-   \epi@finalwidth=\wd\epi@textbox
-   \sbox\epi@sourcebox{%
-     \varwidth{\epigraphwidth}
-     \begin{\sourceflush}\episourcefont#2\end{\sourceflush}%
-     \endvarwidth
-   }%
-   \ifdim\wd\epi@sourcebox>\epi@finalwidth
-     \epi@finalwidth=\wd\epi@sourcebox
-   \fi
-   \leavevmode\vbox{
-     \hb@xt@\epi@finalwidth{\hfil\box\epi@textbox}
-     \vskip1.75ex
-     \hrule height \epigraphrule
-     \vskip.75ex
-     \hb@xt@\epi@finalwidth{\hfil\box\epi@sourcebox}
-   }%
-   \end{\epigraphflush}
-   \vspace{\afterepigraphskip}}}
-\makeatother
-%End of overload command
+% Thesis settings. THIS IS VERY IMPORTANT YOU CHANGE
+\input{vars}
+% ------------------
 
 
-\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
-\newcommand{\Sa}{\pazocal{S}}
-\newcommand{\Ua}{\pazocal{U}}
-\newcommand{\Ha}{\pazocal{H}}
-\newcommand{\Fa}{\pazocal{F}}
-\newcommand{\Ia}{\pazocal{I}}
-\newcommand{\Ea}{\pazocal{E}}
-\newcommand{\ja}{\pazocal{J}}
-
-
-\renewcommand{\labelitemi}{$\bullet$}
-
-
-\setlength{\headheight}{14pt}  %Try fix error
-
-%Custom hyphenization
-\hyphenation{Py-thon}
-\hyphenation{Ju-py-ter}
-\hyphenation{Ma-the-ma-ti-ca}
-
-%Custom math operators
-\DeclareMathOperator*{\meshgrid}{meshgrid}
-
-% floor and ceiling of numbers
-\usepackage{mathtools}
-\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
-\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
-
-% ---------------------------------------------------------------------------------
-%   Notes on the documents!!!
-% https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
-% https://tex.stackexchange.com/questions/316220/todo-commentsnot-include-and-left-align
-% EXAMPLES:
-%\unsure{Is this correct?}\unsure{I'm unsure about also!}
-%\change{Change this!}
-%\info{This can help me in chapter seven!}
-%\improvement{This really needs to be improved!\newline\newline What was I thinking?!}
-% \thiswillnotshow{This is hidden since option `disable' is chosen!}
-% WARNING: It eliminates whitespaces in front of it. You can add trailing {} to avoid
-%\usepackage{xargs}    % Use more than one optional parameter in a new commands
-%\usepackage[colorinlistoftodos,prependcaption,textsize=tiny, textwidth=3cm]{todonotes}
-
-\newcommandx{\unsure}[2][1=]{\setlength{\marginparwidth}{3cm}\reversemarginpar\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
-
-\newcommandx{\change}[2][1=]{\setlength{\marginparwidth}{3cm}\reversemarginpar\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
-
-\newcommandx{\info}[2][1=]{\setlength{\marginparwidth}{3cm}\reversemarginpar\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
-
-\newcommandx{\improvement}[2][1=]{\setlength{\marginparwidth}{3cm}\reversemarginpar\todo[linecolor=yellow,backgroundcolor=yellow!25,bordercolor=yellow,#1]{#2}}
-
-\newcommandx{\thiswillnotshow}[2][1=]{\setlength{\marginparwidth}{3cm}\reversemarginpar\todo[disable,#1]{#2}}
-%
-
-
-%----------------------------------------------------------------------------------------
-%	DOCUMENT VARIABLES
-%----------------------------------------------------------------------------------------
-
-\thesistitle{MyThesis Title} % Your thesis title \ttitle
-\thesistype{Masters Thesis} % Your thesis type Doctoral Thesis or Masters Thesis \ttype
-\supervisor[mailto:example@fc.up.pt]{FirstName \textsc{LastName}} % Your s.upervisor's name \supname \supnamenolink
-%\cosupervisor[mailto:name@host.com]{John \textsc{Doe}} % Your supervisor's name \cosupname \cosupnamenolinkTo
-% To hide the Co-Supervisor field, just comment out \cosupervisor
-\degree{MSc. Engineering Physics} % Your degree name \degreename
-\authors[mailto:example@fc.up.pt]{MyName \textsc{MyLastName}} % Your name \authornames \authornamesnolink
-\addresses{} % Your address \addressname
-\subject{Physics} % Your subject area \subjectname
-\keywords{physics} % Keywords for your thesis \keywordnames
-\university{Universidade do Porto} % Your university's name \univname \univnamenolink
-\UNIVERSITY{UNIVERSIDADE DO PORTO} % Your university's name in capitals \UNIVNAME \UNIVNAMEnolink
-\department{Departamento de Física e Astronomia} % Your department's name \deptname \deptnamenolink
-\DEPARTMENT{DEPARTAMENTO DE FÍSICA E ASTRONOMIA} % Your department's name in capitals \DEPTNAME \DEPTNAMEnolink
-% To hide the Department field, just comment out \DEPARTMENT and \department
-%\group[http://www.groupurl.com]{Research Group} % Your research group's name \groupname \groupnamenolink
-%GROUP[http://www.groupurl.com]{RESEARCH GROUP} % Your research group's name in capitals \GROUPNAME \GROUPNAMEnolink
-% To hide the Group field, just comment out \GROUP and \group
-\faculty{Faculdade de Ciências da Universidade do Porto} % Your faculty's name \facname \facnamenolink
-\FACULTY{FACULDADE DE CIÊNCIAS DA UNIVERSIDADE DO PORTO} % Your faculty's name in capitals \FACNAME \FACNAMEnolink
-% To hide the Faculty field, just comment out \FACULTY and \Faculty
-% NOTE: To remove links write \cmd{name} instead of \cmd[link]{name}
-% NOTE: For aesthetics, at least one of these fields must be set: faculty, group or department
-
-
-%----------------------------------------------------------------------------------------
-%	NOTATION VARIABLES
-%----------------------------------------------------------------------------------------
-
-\newcommand{\dd}{\mathrm{d}}
-
-
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	DOCUMENT
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \begin{document}
 
+% Start counting pages in an unused scheme to fix backref
+\pagenumbering{Alph}
+
+% Includes the front pages (cover and etc.)
 \pagestyle{empty}
 \includepdf[pages={1},pagecommand={},scale=1]{Front/main}
 \cleardoublepage
@@ -250,136 +44,24 @@
 \cleardoublepage
 \pagestyle{fancy}
 
+% Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+\frontmatter
 
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
-
-
-%----------------------------------------------------------------------------------------
-%	TITLE PAGE
-%----------------------------------------------------------------------------------------
-
+% Title page
 \maketitle
 
-%----------------------------------------------------------------------------------------
-%	QUOTATION PAGE
-%----------------------------------------------------------------------------------------
-
-\quotepage{Matt Smith as \emph{The Doctor}, written by Matthew Graham}
-{
-	I am and always will be the optimist, the hoper of far-flung hopes and the dreamer of \newline improbable dreams
-}
+% Edit this file!
+\input{precontent}
 
 
-%----------------------------------------------------------------------------------------
-%	ACKNOWLEDGEMENTS
-%----------------------------------------------------------------------------------------
-\begin{acknowledgements}
-
-Acknowledge ALL the people!
-
-\end{acknowledgements}
-
-\addvspacetoc{0.3cm} % Add a gap in the Contents, for aesthetics
-
-
-%----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE
-%----------------------------------------------------------------------------------------
-\begin{abstract}
-
-This thesis is about something, I guess....
-
-\end{abstract}
-
-%----------------------------------------------------------------------------------------
-%	ABSTRACT PAGE (PORTUGUESE)
-%----------------------------------------------------------------------------------------
-\begin{abstract}[
-	thesistitle={Titulo da Tese em Portugês},
-	title={Resumo},
-	degree={Mestrado Integrado em Engenharia Física},
-	nameconnector={por}]
-\begin{otherlanguage}{portuguese}
-
-Este tese é sobre alguma coisa
-
-\end{otherlanguage}
-\end{abstract}
-
-%----------------------------------------------------------------------------------------
-%	LIST OF CONTENTS/FIGURES/TABLES
-%----------------------------------------------------------------------------------------
-
-\addvspacetoc{0.3cm}
-
-\tableofcontents % Write out the Table of Contents
-
-\listoffigures % Write out the List of Figures
-
-%\listoftables % Write out the List of Tables
-
-%\addvspacetoc{0.3cm}
-
-%----------------------------------------------------------------------------------------
-%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
-%----------------------------------------------------------------------------------------
-
-%\begin{listofcontants}
-%	\const{My little ponny test of magical rainbow}{$mn/mp$}{$2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$}
-%	\const{Vaccuum permeability test of magical rainbow for a specific case of condensed matter physics}{$\epsilon_0$}{$2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$}
-%	\const{Speed of Light test of magical rainbow}{$c$}{$2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$}
-%\end{listofcontants}
-
-
-%----------------------------------------------------------------------------------------
-%	SYMBOLS
-%----------------------------------------------------------------------------------------
-
-%\begin{listofsymbols}
-%	\symb{$F_{\mu\nu}$}{Maxwell tensor}{F}
-%	\symb{$a$}{distance}{m}
-%	\\
-%	\symb{$\omega$}{angular frequency}{rads$^{-1}$}
-%\end{listofsymbols}
-
-
-%----------------------------------------------------------------------------------------
-%	NOTATION
-%----------------------------------------------------------------------------------------
-
-% \newcommand\notationname{Notation and Conventions}
-% \addtotoc{\notationname}
-% \fancyhead[LO]{\textsc{\notationname}}
-
-% \input{Notation}
-
-
-
-%----------------------------------------------------------------------------------------
-%	ABBREVIATIONS
-%----------------------------------------------------------------------------------------
-
-%\begin{glossary}
-%	\abbrev{QM}{Quantum Mechanics}
-%\end{glossary}
-
-
-%----------------------------------------------------------------------------------------
-%	DEDICATORY
-%----------------------------------------------------------------------------------------
-
-%\begin{dedicatory}
-%	This thesis is dedicated to my family, for their love and support.
-%\end{dedicatory}
-
-
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \addvspacetoc{0.3cm}
 
-\mainmatter % Begin numeric (1,2,3...) page numbering
+% Begin numeric (1,2,3...) page numbering
+\mainmatter
 
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{\thechapter. \textsc{#1}}{}}
@@ -391,10 +73,9 @@ Este tese é sobre alguma coisa
 % Add others as needed
 
 
-
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
 
@@ -406,16 +87,18 @@ Este tese é sobre alguma coisa
 
 \backmatter
 
-%----------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------
 %	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \addvspacetoc{0.5cm}
 \addtotoc{Bibliography}
 
 \fancyhead[LO]{\textsc{Bibliography}}
 
-\bibliography{Bibliography} % The references are stored in the file "Bibliography.bib"
+ % The references are stored in the file "Bibliography.bib"
+\bibliography{Bibliography}
 
 
 \end{document}

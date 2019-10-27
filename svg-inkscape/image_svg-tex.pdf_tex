@@ -1,0 +1,82 @@
+%% Creator: Inkscape inkscape 0.92.4, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'image_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{206.74497986bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.74605589)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{image_svg-tex.pdf}}%
+    \put(0.63617102,0.67798235){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Ink\textit{scape}\end{tabular}}}}%
+    \put(0.82935259,0.16026923){\color[rgb]{1,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}red\end{tabular}}}}%
+    \put(0.04027282,0.0900335){\color[rgb]{0,0,0}\rotatebox{45}{\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}45 graden\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{image_svg-tex.pdf}}%
+    \put(0.69116637,0.60075884){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}$\lim_{n \to \infty}\sum_{k=1}^n \frac{1}{k^2}$\end{tabular}}}}%
+    \put(0.12805451,0.68483745){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Einstein \eqref{eq:emc2}\end{tabular}}}}%
+    \put(0.8055266,0.48358997){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}ooo\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{image_svg-tex.pdf}}%
+    \put(0.46790373,0.22537893){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.20708336\unitlength}\tiny Flowed text also works. This is a test text to see that it \textbf{does} work. \\ But, it only works for rectangular flow shapes.\end{minipage}}}%
+    \put(0.76777595,0.07324884){\color[rgb]{0,0,1}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}blue\end{tabular}}}}%
+    \put(0.8061077,0.12179201){\color[rgb]{0,1,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}green\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{image_svg-tex.pdf}}%
+    \put(0.1233386,0.0631778){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}aligned on baseline\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{image_svg-tex.pdf}}%
+    \put(0.06377668,0.5707625){\color[rgb]{0,0,0}\rotatebox{-90}{\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}90 degrees\end{tabular}}}}}%
+    \put(0.19186483,0.38194363){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}90 degrees\end{tabular}}}}}%
+    \put(0.8055266,0.52044211){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}ooo\end{tabular}}}}%
+    \put(0.8055266,0.45024758){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}ooo\end{tabular}}}}%
+    \put(0.51380283,0.53261162){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$x$\end{tabular}}}}%
+    \put(0.55681971,0.5127577){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$y$\end{tabular}}}}%
+    \put(0.60314564,0.48794021){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}$z$\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{image_svg-tex.pdf}}%
+    \put(0.50068431,0.35201764){\color[rgb]{0,0,0}\rotatebox{-36.04952341}{\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}TikZ this$\rightarrow$\end{tabular}}}}}%
+    \put(0.72136512,0.26564522){\color[rgb]{0,0,1}\transparent{0.5}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}transparent\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

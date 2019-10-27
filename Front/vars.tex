@@ -1,32 +1,27 @@
 % !TEX root = main.tex
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	PARAMETERS FOR FCUP THESIS TITLEPAGES/BOOK COVER
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 % THESIS TYPEs:
 % - msc (Master of Sciences)
 % - phd (Doctor of Philosophy)
 \thesistype{msc}
 
-
-% Book spine width (CAREFUL: MIN 8mm)  
+% Book spine width (CAREFUL: MIN 8mm)
 \spinewidth{10mm}
-
 
 % Thesis front title
 \fronttitle{My Thesis Title}
-%Len-less, calibration free imaging trough multimode fibre optics}
-
 
 % Front title spacing multiplier
+% NOTE: you may want to adjust this value to 1.15/1.20 after changing to your
+% thesis title
 \titlespacing{1.15}
-% NOTE: you may want to adjust this value to 1.15/1.20 after changing to your thesis title
-
 
 % Book spine title
 \spinetitle{Spine Title}
-
 
 % Author name
 \authorname[mailto:example@fc.up.pt]{John Smith}
@@ -39,27 +34,30 @@
 % USAGE: \extraaffiliation[url]{relative/path/to/logo}{INITIAL}{University name}
 %\extraaffiliation[http://uni3.pt]{logos/logo3}{UNI3}{Universidade/Faculdade 3}
 
-
-% Degrre name
+% Degree name
 \degreename{Mestrado Integrado em Engenharia Física}
-
 
 % Field of science
 \sciencefield{Engenharia Física}
 
-
 % Department name
 \department[http://dfa.fc.up.pt/]{Departamento de Física e Astronomia}
 
-
 % Supervisor info
-\supervisor[mailto:example@fc.up.pt]{Prof. Dra. Marie Curie} % Supervisor name
-%\supervisorposition{Categoria} % Supervisor name position/Category (comment out to hide this field)
-\supervisoraffiliation[]{Faculdade de Ciências} % Supervisor university/faculty % Supervisor university/faculty
-%\supervisoraffiliation[]{Instituto de Engenharia de Sistemas e Computadores, Tecnologia e Ciência}
-
+% Supervisor name
+\supervisor[mailto:example@fc.up.pt]{Prof. Dra. Marie Curie}
+% Supervisor name position/Category (comment out to hide this field)
+%\supervisorposition{Categoria} %
+% Supervisor university/faculty
+\supervisoraffiliation[]{Faculdade de Ciências}
+% Supervisor secondary affiliation
+%\supervisoraffiliation[]{Instituto de Engenharia de Sistemas e Computadores,
+% Tecnologia e Ciência}
 
 % Cosupervisor info ----- Comment out if not needed
-\cosupervisor[mailto:example@fc.up.pt]{Prof. Dr. Galileu Galilei} % Cosupervisor name
-%\cosupervisorposition{Categoria} % Cosupervisor name position/Category (comment out to hide this field)
-\cosupervisoraffiliation[]{Faculdade de Ciências} % Supervisor university/faculty
+% Cosupervisor name
+\cosupervisor[mailto:example@fc.up.pt]{Prof. Dr. Galileu Galilei}
+% Cosupervisor name position/Category (comment out to hide this field)
+%\cosupervisorposition{Categoria}
+% Supervisor university/faculty
+\cosupervisoraffiliation[]{Faculdade de Ciências}

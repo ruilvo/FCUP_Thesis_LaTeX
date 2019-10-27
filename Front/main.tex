@@ -4,12 +4,13 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FCUP Masters/Doctoral thesis title/examiner pages and book cover
+% Must be compiled with XeLaTex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \documentclass[11pt]{article}
 
@@ -26,11 +27,9 @@
 \usepackage[export]{adjustbox}
 \usepackage{tikz}
 
-
 % HYPERREF
 \usepackage{hyperref}
 \hypersetup{colorlinks,urlcolor=blue}
-
 
 % STARTING GEOMETRY
 \usepackage[a4paper]{geometry}
@@ -38,12 +37,10 @@
 	margin=0mm
 }
 
-
 % LINESPREAD
 \usepackage{calc}
 \usepackage{setspace}
 \setstretch{1.2}
-
 
 % FONT DIR AND ARIAL FONT SETUP (XELATEX NEEDED)
 \usepackage{fontspec}
@@ -55,7 +52,6 @@
 	BoldItalicFont=*-Bold-Italic
 ]{Arial}
 
-
 % NEW FONT SIZES FOR TITLE
 \makeatletter
 \newcommand\HUGE{\@setfontsize\Huge{36}{43.2}}
@@ -66,9 +62,9 @@
 \makeatother
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	DOCUMENT COMMANDS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 % Default blue (azul ciencias)
 \definecolor{fcupblue}{RGB}{153,205,255}
@@ -187,18 +183,18 @@
 	\FPmul\ttlspcCD{1.5}{#1}
 }
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	DEFAULT PARAMETERS (DO NOT CHANGE)
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \thesistype{msc}
 \spinewidth{13mm}
 \titlespacing{1.0}
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	START DOCUMENT
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \input{vars}
 
@@ -209,9 +205,9 @@
 \setlength{\parindent}{0cm}
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	ONE-SIDED TITLE PAGE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 
 \hspace{25mm}
@@ -222,7 +218,7 @@
 		\setstretch{\ttlspcfront}
 		{\HUGE \bfseries \frttitle} \\
 		\setstretch{1.2} {\large~\\}
-		{\LargeA \authr \\} 
+		{\LargeA \authr \\}
 		{\large \degree \\}
 		{\small \deptname \\ \the\year \\}
 		{\small~\\}
@@ -245,9 +241,9 @@
 
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	EXAMINER PAGE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 
 \raggedleft
@@ -268,7 +264,7 @@
 		pelo júri, e só essas, foram efetuadas. \\
 		\\
 		O Presidente do Júri, \\
-		\\ 
+		\\
 		\\
 		\\
 		Porto, \underline{\qquad\quad}/\underline{\quad\qquad}/\underline{\qquad\qquad} \\
@@ -280,9 +276,9 @@
 \newpage
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	CD PAGE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 
 \newcommand\CDTemplate{
@@ -293,7 +289,7 @@
 			\draw[gray,very thin] (0,0) circle (20.5mm);
 			\draw[gray,very thin] (0,0) circle (58.5mm);
 		\end{tikzpicture}
-	}}% 
+	}}%
 }
 
 
@@ -307,11 +303,11 @@
 				\centering
 				\ifdefined\collaborating \vspace{15mm}
 				\else \vspace{3mm} \fi
-				\ifdefined\extraaffilnolink 
-					\includegraphics[width=26mm,valign=t]{\extralogo} 
-				\fi 
-				\ifdefined\otheraffilnolink 
-					\includegraphics[width=26mm,valign=t]{\otherlogo} 
+				\ifdefined\extraaffilnolink
+					\includegraphics[width=26mm,valign=t]{\extralogo}
+				\fi
+				\ifdefined\otheraffilnolink
+					\includegraphics[width=26mm,valign=t]{\otherlogo}
 				\fi
 				\includegraphics[width=26mm,valign=t]{fcup}
 				\ifdefined\collaborating \else
@@ -319,7 +315,7 @@
 					\includegraphics[width=34mm]{cd}
 				\fi
 			}
-		
+
 			\parbox[b][38mm][c]{38mm}{
 				\centering
 				\hspace{0mm}
@@ -334,7 +330,7 @@
 				\ifthenelse{\equal{\tcnumber}{2}}{
 					\vspace{4mm}
 					{\noindent\scriptsize O Presidente do Júri, \\
-					\\ 
+					\\
 					\\
 					\\
 					Porto, \\
@@ -342,25 +338,25 @@
 					\underline{\qquad\quad}/\underline{\quad\qquad}/\underline{\qquad\qquad} \\}}{}
 				\vspace{2mm}
 			}
-			
+
 			\centering
 			\parbox[b][35mm][b]{90mm}{
 				\centering
 				\setstretch{1.0}
-				{\small \bfseries \spntitle \\[2mm] } 
+				{\small \bfseries \spntitle \\[2mm] }
 				{\smaller \footnotesize \authrnolink \\[2mm]}
-				{\smaller \degree \\[1mm] 
+				{\smaller \degree \\[1mm]
 				 \deptnamenolink \\[2mm] }
 				{\large \the\year \\[1mm] }
 			}
 		}
-	}}% 
+	}}%
 }
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	CD COVER PAGE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 
 \newcommand\CDCoverTemplate{
@@ -368,19 +364,19 @@
 	{
 		\centering
 		\vfill
-		
+
 		\begin{tikzpicture}
 			\draw[gray,very thin] (0,0) rectangle (120mm,120mm);
 		\end{tikzpicture}
-		
+
 		\vfill
-		
+
 		\begin{tikzpicture}
 			\draw[gray,very thin] (0,0) rectangle (150mm,117.5mm);
 		\end{tikzpicture}
 
 		\vfill
-	}}% 
+	}}%
 }
 
 
@@ -389,7 +385,7 @@
 	{
 		\centering
 		\vfill
-		
+
 		\parbox[b][120mm][b]{120mm}
 		{
 			\raggedleft
@@ -397,11 +393,11 @@
 			\begin{minipage}[b][120mm][t]{80mm}
 				\parbox[t]{80mm}{
 					\raggedleft \vspace{8mm}
-					\ifdefined\extraaffilnolink 
-						\includegraphics[width=26mm,valign=t]{\extralogo} 
-					\fi 
-					\ifdefined\otheraffilnolink 
-						\includegraphics[width=26mm,valign=t]{\otherlogo} 
+					\ifdefined\extraaffilnolink
+						\includegraphics[width=26mm,valign=t]{\extralogo}
+					\fi
+					\ifdefined\otheraffilnolink
+						\includegraphics[width=26mm,valign=t]{\otherlogo}
 					\fi
 					\includegraphics[width=26mm,valign=t]{fcup}
 				}
@@ -421,9 +417,9 @@
 				\includegraphics[scale=0.4]{front}
 			\end{minipage}
 		}
-		
+
 		\vfill
-		
+
 		\parbox[b][117.5mm][b]{150mm}
 		{
 			\centering
@@ -432,13 +428,13 @@
 		}
 
 		\vfill
-	}}% 
+	}}%
 }
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	BOOK FRONT COVER PAGE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 
 \newcommand\FrontCover{
@@ -449,9 +445,9 @@
 				\parbox[t]{125mm}{
 					\raggedleft
 					\vspace{12mm}
-					
+
 					\includegraphics[width=52mm]{fcup}\hspace{19mm}
-					
+
 					\ifdefined\otheraffilnolink
 						\vspace{3mm}
 						\includegraphics[width=52mm]{\otherlogo}\hspace{19mm}
@@ -473,8 +469,8 @@
 						Faculdade de Ciências da Universidade do Porto\ifdefined\otherabbrev
 							\ifdefined\extraabbrev , \otheraffilnolink~e \extraaffilnolink
 							\else ~e \otheraffilnolink \fi
-						\else	 
-							\ifdefined\extraabbrev ~e \extraaffilnolink \fi 
+						\else
+							\ifdefined\extraabbrev ~e \extraaffilnolink \fi
 						\fi~em \\
 					\scifield \\}
 					{\LargeA \the\year \\}
@@ -491,9 +487,9 @@
 
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	BOOK BACK COVER PAGE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 
 \newcommand\BackCover{
@@ -503,7 +499,7 @@
 			\raggedright
 			\hspace{1mm}
 			\includegraphics[width=52mm]{fcup}
-			
+
 			\raggedleft
 			\vspace{3mm}
 			\includegraphics[scale=0.97]{back}
@@ -512,9 +508,9 @@
 }
 
 
-%----------------------------------------------------------------------------------------
-%	BOOK SPINE/RIBBON 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
+%	BOOK SPINE/RIBBON
+%-------------------------------------------------------------------------
 
 
 \newcommand\BlueRibbon{
@@ -533,19 +529,19 @@
 
 \newcommand\Spine{
     \put(-1,0){\parbox[b][297mm][t]{\coverwidth}{% SPINE BEGINS HERE
-		\hspace{210mm} 
+		\hspace{210mm}
 		\begin{minipage}[c][297mm][t]{\spinew}
 			\centering
 
 			\vspace{1mm}
-			\begin{turn}{-90} 
+			\begin{turn}{-90}
 				\parbox[t]{31mm}{
 					\raggedright
 					\HugeA \tabbrev
 				}
 			\end{turn}
 
-			\setstretch{1.0} 
+			\setstretch{1.0}
 			\small FCUP \\
 			\ifdefined\otherabbrev \otherabbrev \\ \fi
 			\ifdefined\extraabbrev \extraabbrev \\ \fi
@@ -556,7 +552,7 @@
 			\includegraphics[width=0.7\spinew]{up}
 			\vspace{10mm}
 
-			\begin{turn}{-90} 
+			\begin{turn}{-90}
 				\parbox[t]{95mm}{
 					\setstretch{1.0} \raggedright
 					\normalsize \bfseries \spntitle
@@ -565,7 +561,7 @@
 
 			\vfill
 
-			\begin{turn}{-90} 
+			\begin{turn}{-90}
 				\parbox[t]{55mm}{
 					\setstretch{1.0} \raggedright
 					\small \bfseries \authrnolink
@@ -581,9 +577,9 @@
 }
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	CD PAGES ASSEMBLY
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \AddToShipoutPicture*{\CDTemplate}
 \AddToShipoutPicture*{\CDContent}
@@ -598,9 +594,9 @@
 \phantom{~}
 \newpage
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 %	BOOK COVER ASSEMBLY
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------
 
 \eject \pdfpagewidth=\coverwidth \pdfpageheight=297mm
 

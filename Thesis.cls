@@ -38,7 +38,7 @@
 %}
 
 % Allows the use of international characters (e.g. Umlauts)
-\RequirePackage[utf8]{inputenc} 
+\RequirePackage[utf8]{inputenc}
 
 \newcommand\btypeout[1]{\bhrule\typeout{\space #1}\bhrule}
 
@@ -76,7 +76,7 @@
 	inner=2.5cm,
 	bottom=2.8cm
 ]{geometry}
-                    
+
 \raggedbottom
 \setlength{\topskip}{1\topskip \@plus 5\p@}
 \doublehyphendemerits=10000       % No consecutive line hyphens.
@@ -154,7 +154,7 @@
 \usepackage{booktabs}
 \usepackage{rotating}
 \usepackage{listings}
-\usepackage{lstpatch}
+% \usepackage{lstpatch}
 \lstset{captionpos=b,
         frame=tb,
         basicstyle=\scriptsize\ttfamily,
@@ -316,23 +316,23 @@
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE DESIGN
-%----------------------------------------------------------------------------------------          
+%----------------------------------------------------------------------------------------
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \renewcommand\maketitle{
-	
+
 % TITLE PAGE
 \thispagestyle{empty}
 \begin{titlepage}
  	\begin{center}
  		\textsc{\LARGE \univname}	\\[1.5cm] % University name
  		\textsc{\Large \ttype}		\\[0.5cm] % Thesis type
- 		
+
  		\HRule \\[0.4cm] % Horizontal line
  		{\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
  		\HRule \\[1.2cm] % Horizontal line
- 		
+
  		\begin{minipage}[t]{0.4\textwidth}
  			\begin{flushleft}
  				\large \emph{Author:}\\ \authornames
@@ -341,15 +341,15 @@
  		\begin{minipage}[t]{0.4\textwidth}
  			\begin{flushright}
  				\large
- 				\emph{Supervisor:} \\ \supname 
- 			\ifdefined\cosupnamenolink 
- 				\\[0.4cm] 
- 				\emph{Co-supervisor:} \\ \cosupname 
+ 				\emph{Supervisor:} \\ \supname
+ 			\ifdefined\cosupnamenolink
+ 				\\[0.4cm]
+ 				\emph{Co-supervisor:} \\ \cosupname
  			\fi
  			\end{flushright}
  		\end{minipage}
  		\\[2.5cm]
- 		
+
  		\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \degreename}
  		\\[0.3cm] \textit{at the} \\[0.4cm]
  		\ifdefined\facnamenolink \facname \\ \fi
@@ -376,13 +376,13 @@
 \newcommand*\absEnvConnector{by}
 \newcommand*\absEnvThesisTitle{\ttitle}
 \define@key{absEnv}{title}{\renewcommand*\absEnvTitle{#1}}
-\define@key{absEnv}{thesistitle}{\renewcommand*\absEnvThesisTitle{#1}} 
+\define@key{absEnv}{thesistitle}{\renewcommand*\absEnvThesisTitle{#1}}
 \define@key{absEnv}{titlepage}{\renewcommand*\absEnvTitlePage{#1}}
 \define@key{absEnv}{degree}{\renewcommand*\absEnvDegree{#1}}
 \define@key{absEnv}{nameconnector}{\renewcommand*\absEnvConnector{#1}}
 
 \newenvironment{abstract}[1][]
-{	
+{
   \setkeys{absEnv}{#1}
   \btypeout{\absEnvTitlePage}
   \addtotoc{\absEnvTitle}
@@ -496,18 +496,18 @@
 %----------------------------------------------------------------------------------------
 %	LIST OF ABBREVIATIONS PAGE DESIGN
 %----------------------------------------------------------------------------------------
-\usepackage{xparse,expl3,longtable} 
+\usepackage{xparse,expl3,longtable}
 % *****************************************************************
-% ** 
+% **
 % ** Package l3regex is obsolete and has been removed! So, I changed it
-% ** 
+% **
 % ** Its functionality is now only provided as part of the expl3 package.
-% ** 
+% **
 % ** The old packages will be removed entirely at the end of 2018.
-% ** 
+% **
 % ** Therefore, please replace '\usepackage{l3regex}'
 % ** with '\usepackage{expl3}' in your documents as soon as possible.
-% ** 
+% **
 % \ExplSyntaxOn
 % \NewDocumentCommand{\boldcapitals}{ m }
 %  {
@@ -526,7 +526,7 @@
 \newcommand\glossaryname{Abbreviations}
 
 \renewenvironment{glossary}
-{	
+{
   \btypeout{\glossaryname}
   \addtotoc{\glossaryname}
   \fancyhead[LO]{\textsc{\glossaryname}}
@@ -551,14 +551,14 @@
 \newcommand\listconstantsname{Physical Constants}
 
 \newenvironment{listofcontants}
-{	
+{
   \btypeout{\listconstantsname}
   \addtotoc{\listconstantsname}
   \fancyhead[LO]{\textsc{\listconstantsname}}
   \chapter*{\listconstantsname
       \@mkboth{\MakeUppercase\listconstantsname}{\MakeUppercase\listconstantsname}}
   \setlength{\tabcolsep}{0.1cm}
-	\begin{longtable}[c]{llcl} 
+	\begin{longtable}[c]{llcl}
 }
 {
     \const[\phantom{$=$}]{}{\phantom{$mp/mn$}}{}
@@ -576,14 +576,14 @@
 \newcommand\listsymbolsname{Symbols}
 
 \newenvironment{listofsymbols}
-{	
+{
   \btypeout{\listsymbolsname}
   \addtotoc{\listsymbolsname}
   \fancyhead[LO]{\textsc{\listsymbolsname}}
   \chapter*{\listsymbolsname
       \@mkboth{\MakeUppercase\listsymbolsname}{\MakeUppercase\listsymbolsname}}
   \setlength{\tabcolsep}{0.1cm}
-	\begin{longtable}[c]{l@{\hskip 2cm}l@{\hskip 2cm}l} 
+	\begin{longtable}[c]{l@{\hskip 2cm}l@{\hskip 2cm}l}
 }
 {
     \symb{\phantom{$d$}}{\phantom{distance}}{\phantom{m}}

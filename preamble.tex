@@ -1,0 +1,207 @@
+%-------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------
+
+% Include pdf pages in the document
+% Necessary to include the front pages (cover and etc.)
+\usepackage{pdfpages}
+
+% Fix top page geometry on long titles
+\setlength{\headheight}{14pt}  %Try fix error
+
+% For dummy text. You don't need package in the final version anyway
+\usepackage{lipsum}
+
+% Language hyphenation and typographical rules
+\usepackage[portuguese,english]{babel}
+%Custom hyphenization
+\hyphenation{Py-thon}
+\hyphenation{Ju-py-ter}
+\hyphenation{Ma-the-ma-ti-ca}
+
+% Inline quotes
+% added for \begin{displayquote}
+\usepackage[autostyle]{csquotes}
+
+% Bibliography setup
+% Use the natbib reference package - read up on this to edit the reference
+% style; if you want text (e.g. Smith et al., 2012) for the in-text references
+% (instead of numbers), remove 'numbers'
+\usepackage[square, numbers, comma, sort&compress]{natbib}
+\bibliographystyle{IEEEtranN}  % I actually quite like this one
+% \bibliographystyle{apsrev4-1-etal} % With emphasized titles. ORIGINAL
+% Prevent that the first citation is in the ToC
+\usepackage{notoccite}
+
+% Interesting float placements (like 'H') and custom float types
+\usepackage{float}
+% Text wrapped around pictures
+% https://pt.sharelatex.com/learn/Wrapping_text_around_figures
+\usepackage{wrapfig}
+% Force float barriers, use as \FloatBarrier
+\usepackage[section]{placeins}
+% Place floats *above* footnotes
+\usepackage[bottom, perpage, symbol]{footmisc}
+% Set default float placement
+\makeatletter
+\renewcommand{\fps@figure}{tbph}
+\renewcommand{\fps@table}{tbph}
+\makeatother
+
+% Pretty colours
+\usepackage{xcolor}
+% \usepackage{color} % Deprecated by xcolor
+
+% SVGs with Inkscape and PDF+LaTeX
+% https://tex.stackexchange.com/questions/473994/svg-and-inkscape
+\usepackage[inkscapearea=page]{svg}
+% Specifies the directory where vector are stored
+\svgpath{{Svgs/}}
+
+% Graphics stuff
+\usepackage{graphicx}  % invoked by svg
+% Specifies the directory where pictures are stored
+\graphicspath{{Figures/}}
+
+% For sub-figures and stuff
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Math stuff
+\usepackage{amsmath} % Interesting environments
+\usepackage{amssymb} % Interesting symbols
+\usepackage{commath} % Interesting macros
+\usepackage{braket} % Dirac bra-ket and set notations
+\usepackage{mathpazo} % Math font (palatino for Computer Modern on math)
+\usepackage{mathtools} % Mathematical tools to use with amsmath
+\setstretch{1.5}
+% Math alphabet
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+\newcommand{\Sa}{\pazocal{S}}
+\newcommand{\Ua}{\pazocal{U}}
+\newcommand{\Ha}{\pazocal{H}}
+\newcommand{\Fa}{\pazocal{F}}
+\newcommand{\Ia}{\pazocal{I}}
+\newcommand{\Ea}{\pazocal{E}}
+\newcommand{\ja}{\pazocal{J}}
+%Custom math operators
+\DeclareMathOperator*{\meshgrid}{meshgrid}
+% Floor and ceiling of numbers
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+% Notation variables
+\newcommand{\dd}{\mathrm{d}}
+
+% Units and numbers in text
+\usepackage{siunitx}
+\DeclareSIUnit\baud{Bd} % Baud
+
+% Reimplementation of and extensions to LaTeX verbatim
+\usepackage{verbatim} %added for \begin{comment}
+
+% Fancy chapter start quotes
+\usepackage{epigraph, varwidth}
+\input{epigraphoverload}
+
+% Use more than one optional parameter in a new commands
+\usepackage{xargs}
+
+% Code listings
+\usepackage{listings}
+% Colors for the listing
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{orange}{RGB}{255,127,0}
+% Python style for code blocks
+\lstdefinestyle{Python}{
+        language=Python,
+         numberstyle=\small,
+         stepnumber=2,
+         numbersep=10pt,
+         basicstyle={\small\ttfamily},
+         keywordstyle    = \color{blue},
+         commentstyle    = \color{red}\ttfamily,
+         stringstyle=\color{orange},
+         tabsize=2,
+         columns=fullflexible,
+         backgroundcolor=\color{backcolour},
+         frame=none,
+         numbers=left,
+         aboveskip=5mm,
+         belowskip=5mm,
+         breaklines=true
+}
+
+% Algorithmicx provides a flexible, yet easy to use, way for inserting good
+% looking pseudocode or source code in your papers.
+\usepackage{algorithmicx}
+
+% Hyperref and Backref
+% backref makes the bibliography say where the entry was cited.
+% For the print version of the thesis you might wanna set all colors to back
+\usepackage{hyperref}
+\usepackage[hyperpageref]{backref}
+\hypersetup{colorlinks, citecolor=blue, urlcolor=blue,
+        linkcolor=blue, breaklinks=true, hypertexnames=true}
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{%
+    \ifcase #1%
+          \or [Cited on page~#2.]%
+          \else [Cited on pages~#2.]%
+    \fi%
+    }
+% Interesting URL breakings
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-\do\&\do.\do:}
+
+% Variants of \fbox and other games with boxes
+\usepackage{fancybox}
+
+% LaTeX default text is fully-justified, but often left-justified text may be a
+% more suitable format. This left-alignment can be easily accomplished by
+% importing the ragged2e package.
+\usepackage{ragged2e}
+
+% Create tabular cells spanning multiple rows
+\usepackage{multirow}
+
+% Changes bullet points marker
+\renewcommand{\labelitemi}{\(\bullet\)}
+
+% Notes on the documents
+% https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes
+% https://tex.stackexchange.com/questions/316220/todo-commentsnot-include-and-left-align
+% Examples:
+% \unsure{Is this correct?}, \change{Change this!},
+% \info{This can help me in chapter seven!}
+% \improvement{This really needs to be improved!\\ What was I thinking?!}
+% \thiswillnotshow{This is hidden since option `disable' is chosen!}
+% WARNING: It eliminates whitespaces in front of it.
+% You can add trailing {} to avoid.
+
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny, textwidth=3cm]{todonotes}
+% You can add:
+% \setlength{\marginparwidth}{3cm}\reversemarginpar
+% before \todo on each command for a different effect
+\newcommandx{\unsure}[2][1=]{
+    % \setlength{\marginparwidth}{3cm}\reversemarginpar
+    \todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}
+    }
+\newcommandx{\change}[2][1=]{
+    % \setlength{\marginparwidth}{3cm}\reversemarginpar
+    \todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}
+    }
+\newcommandx{\info}[2][1=]{
+    % \setlength{\marginparwidth}{3cm}\reversemarginpar
+    \todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}
+    }
+\newcommandx{\improvement}[2][1=]{
+    % \setlength{\marginparwidth}{3cm}\reversemarginpar
+    \todo[linecolor=yellow,backgroundcolor=yellow!25,bordercolor=yellow,#1]{#2}
+    }
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}

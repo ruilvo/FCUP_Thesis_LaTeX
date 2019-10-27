@@ -1,41 +1,51 @@
 % Chapter Template
 
-
-\chapter{Chapter Title Here} % Main chapter title
+% Main chapter title
 %\chapter[toc version]{doc version}
-%\chaptermark{version for header} %Short version of the title for the headeer
-\label{ChapterX} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+\chapter{Chapter Title Here}
+
+% Short version of the title for the header
+%\chaptermark{version for header}
+
+% Chapter Label
+% For referencing this chapter elsewhere, use \ref{ChapterTemplate}
+\label{ChapterTemplate}
 
 % Write text in here
 % Use \subsection and \subsubsection to organize text
 
-Welcome to the tutorial on how to use this thesis model. This is not to teach you how to use \LaTeX. For that read a tutorial. But this aims to teach you how to do the basic stuff you will need in order to produce a decent document.
+Welcome to the tutorial on how to use this thesis model. This is not to teach
+you how to use \LaTeX. For that read a tutorial. But this aims to teach you how
+to do the basic stuff you will need in order to produce a decent document.
 
 \section{Citations}
-You can add extra info to you references, like \cite[chapter 3]{Nobody06}
+You can add extra info to you references, like~\cite[section 3]{Fienup1982}. You
+can also call them by author, like saying~\citet{Fienup1982}.
 
 \section{Figures}
 
-Let us start with a figure with two subfigures like in \ref{fig:FCUPfatCat}.
-
+Let us start with a figure with two subfigures like in~\ref{fig:FCUPfatCat}.
 \begin{figure}
 	\centering
 	\begin{subfigure}{.49\textwidth}
   		\centering
-  		\includegraphics[width=.95\linewidth]{ChapterTemplate/20160517_123603.jpg}
+          \includegraphics[width=.95\linewidth]
+            {ChapterTemplate/20160517_123603.jpg}
   		\caption{FCUP's fat cat doing what cats do.}
 	\end{subfigure}%
 	\hfill
 	\begin{subfigure}{.49\textwidth}
   		\centering
- 		 \includegraphics[width=.95\linewidth]{ChapterTemplate/20160517_123609.jpg}
+          \includegraphics[width=.95\linewidth]
+            {ChapterTemplate/20160517_123609.jpg}
  		 \caption{FCUP's fat cat resting.}
 	\end{subfigure}
 	\caption{\label{fig:FCUPfatCat}FCUP's fat cat.}
 \end{figure}
 
 
-Or two figures side by side like \ref{fig:FCUPfatcatSide1} and \ref{fig:FCUPfatcatSide2}.
+Or two figures side by side like~\ref{fig:FCUPfatcatSide1}
+and~\ref{fig:FCUPfatcatSide2}.
 
 \begin{figure}
 \centering
@@ -53,12 +63,13 @@ Or two figures side by side like \ref{fig:FCUPfatcatSide1} and \ref{fig:FCUPfatc
 \end{figure}
 
 
-Or a figure with some text on the side, like \ref{fig:FCUPfatcatSide3}, or even a Figure wrapped around in text, as seen on Figure \ref{fig:FCUPfatcatSide4}
+Or a figure with some text on the side, like~\ref{fig:FCUPfatcatSide3}, or even
+a Figure wrapped around in text, as seen on Figure~\ref{fig:FCUPfatcatSide4}.
 
 \begin{figure}
 \centering
 \begin{minipage}{.49\textwidth}
-  And here we have some text related to this image. The text can occupy the same space as the image would normally do...
+  And here we have some text related to this image. The text can occupy the same space as the image would normally do.
 \end{minipage}%
 \hfill
 \begin{minipage}{.49\textwidth}
@@ -68,26 +79,84 @@ Or a figure with some text on the side, like \ref{fig:FCUPfatcatSide3}, or even 
 \end{minipage}
 \end{figure}
 
-% If you find figures split between two pages, use the uppercase L or R, to let the wrapped figure be a float object that can move   through the page
-This is where the table goes with text wrapping around it. You may
-embed tabular environment inside wraptable environment and customize as you like:
+\textcolor{red}{This is where the float goes with text wrapping around it. You
+may embed tabular environment inside wraptable environment and customize as you
+like:} Ultrices dui sapien eget mi proin sed libero. Ornare lectus sit amet est
+placerat in egestas erat imperdiet. Tortor dignissim convallis aenean et. Quam
+adipiscing vitae proin sagittis nisl rhoncus mattis. Vivamus at augue eget arcu
+dictum varius duis. Cursus turpis massa tincidunt dui.
 \begin{wrapfigure}{r}{8cm}
-  \includegraphics[width=8cm]{ChapterTemplate/20160517_123609.jpg}
-  \captionof{figure}{\label{fig:FCUPfatcatSide4}FCUP's fat cat.}
-\end{wrapfigure}
-\lipsum[2-3]
+    % If you find figures split between two pages, use the uppercase L or R, to
+    % let the wrapped figure be a float object that can move through the page.
+    \centering
+    \includegraphics[width=7cm]{ChapterTemplate/20160517_123609.jpg}
+    \captionof{figure}{\label{fig:FCUPfatcatSide4}FCUP's fat cat.}
+  \end{wrapfigure}
+Leo in vitae turpis massa sed. Tempor orci eu lobortis elementum. Turpis egestas
+integer eget aliquet nibh praesent tristique magna. Sed blandit libero volutpat
+sed cras ornare arcu dui. Feugiat sed lectus vestibulum mattis ullamcorper velit
+sed ullamcorper. Interdum velit euismod in pellentesque massa placerat duis
+ultricies lacus. Ac ut consequat semper viverra nam. Dis parturient montes
+nascetur ridiculus mus. Mattis pellentesque id nibh tortor.
+
+\subsection{SVGs}
+How to make a \LaTeX\ document with vector images, where the text in the images
+has exactly the same font and size as in normal text? This article describes how
+this is done using the `PDF/EPS/PS + LaTeX' output feature of Inkscape 0.48.
+Inkscape can export the graphics to PDF/EPS/PS, and the text to a \LaTeX\ file.
+When the \LaTeX\ file is input in the \LaTeX\ document, the PDF/EPS/PS image is
+included with overlaid text. Because typesetting of the text is done by \LaTeX,
+\LaTeX\ commands can be used in images, such as writing equations, references
+and shorthand macros.
+
+\emph{(requires Inkscape version 0.48 or higher; this document discusses features up to Inkscape 0.49)}
+
+\begin{figure}
+    \centering
+      \includegraphics[width=0.5\columnwidth]{ChapterTemplate/image-normal.pdf}
+      \caption{The test SVG image, as it is seen in Inkscape (exported to PDF \emph{without} \LaTeX\ option).}
+      \label{fig:normal}
+\end{figure}
+
+\begin{figure}
+\centering
+    \includesvg[width=0.8\columnwidth]{image}
+    \caption{The test image, exported to PDF \emph{with} \LaTeX\ option.}
+    \label{fig:pdflatex}
+\end{figure}
+
+\begin{equation}
+    \label{eq:emc2}
+    E = mc^{2}
+\end{equation}
+
+\subsubsection{Automatic export}
+
+(`write18' must be enabled, see the {\small\verb|epstopdf|} package
+documentation. Add {\small\verb|-shell-escape|} to the command line when calling
+{\small\verb|pdflatex|}. \textcolor{red}{And inkscape must be discoverable by the
+OS}),
+
+Whenever the SVG file is updated, it is possible to have \LaTeX\ automatically call Inkscape to export the image to PDF and \LaTeX\ again. This simplifies the workflow to
+\begin{itemize}
+	\item Modify the SVG image in Inkscape;
+	\item Save the SVG (Ctrl+S, no need to export to PDF);
+	\item Recompile \LaTeX\ document. pdf\LaTeX\ will notice the SVG file has changed, and will automatically do the export for you.
+\end{itemize}
 
 \section{Math}
 
-
-The following equation uses a custom mathematical operator defined in line 166 of the stock main.tex:
+The following equation uses a custom mathematical operator defined in line 88
+of preamble.tex:
 \begin{equation}
 \begin{aligned}
-			\meshgrid_{\mathbf{x}_{1},\mathbf{x}_{2}}\mathbf{x}_{1}&=\begin{bmatrix}a_{1} & b_{1} & c_{1}\\
-a_{1} & b_{1} & c_{1}
+            \meshgrid_{\mathbf{x}_{1},\mathbf{x}_{2}}\mathbf{x}_{1}&=
+            \begin{bmatrix}a_{1} & b_{1} & c_{1}\\
+            a_{1} & b_{1} & c_{1}
 \end{bmatrix}\\
-			\meshgrid_{\mathbf{x}_{1},\mathbf{x}_{2}}\mathbf{x}_{2}&=\begin{bmatrix}a_{2} & a_{2} & a_{2}\\
-b_{2} & b_{2} & b_{2}
+            \meshgrid_{\mathbf{x}_{1},\mathbf{x}_{2}}\mathbf{x}_{2}&=
+            \begin{bmatrix}a_{2} & a_{2} & a_{2}\\
+            b_{2} & b_{2} & b_{2}
 \end{bmatrix}
 \end{aligned}
 \end{equation}
@@ -110,7 +179,6 @@ And this is an equation with multiple lines:
 \end{equation}
 
 And this is some random Python code:
-
 
 \begin{lstlisting}[style = Python]
 def Hello():
