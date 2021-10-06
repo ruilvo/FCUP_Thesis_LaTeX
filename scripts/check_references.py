@@ -1,8 +1,7 @@
 import re, glob 
 import os 
 
-
-def main(paths):
+def main(paths:list):
     """
         Checks the provided paths to see if all labels are referenced
 
