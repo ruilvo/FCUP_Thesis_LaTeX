@@ -1,4 +1,5 @@
 import re, glob 
+import os 
 
 
 def main(paths):
@@ -13,7 +14,7 @@ def main(paths):
     all_refs   = {}
 
     for path in paths:
-        x = glob.glob(path+ '/*.tex')
+        x = glob.glob(os.path.join(path, '/*.tex'))
 
         for ff in x:
             with open(ff, mode = 'r') as file:
