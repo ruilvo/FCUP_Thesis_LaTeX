@@ -1,5 +1,5 @@
 import re, glob 
-
+import os 
 
 def main(paths):
     """
@@ -7,11 +7,13 @@ def main(paths):
 
         paths: list with the paths to the Appendices and Chapters folders
     """
+    if not isinstance(paths, (list, tuple)):
+        raise Exception("Wrong input data type. Provide a list/tuple with the paths!")
     all_labels = {}
     all_refs   = {}
 
     for path in paths:
-        x = glob.glob(path+ '/*.tex')
+        x = glob.glob(os.path.join(path, '/*.tex'))
 
         for ff in x:
             with open(ff, mode = 'r') as file:
