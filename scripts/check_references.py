@@ -7,6 +7,8 @@ def main(paths):
 
         paths: list with the paths to the Appendices and Chapters folders
     """
+    if not isinstance(paths, (list, tuple)):
+        raise Exception("Wrong input data type. Provide a list/tuple with the paths!")
     all_labels = {}
     all_refs   = {}
 
