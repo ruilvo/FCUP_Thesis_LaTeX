@@ -31,6 +31,12 @@ uses inkscape to compile SVGs into PDFs. Therefore, if you want to use this
 package, you must have Inkscape discoverable by the system. On Windows, this
 means that Inkscape's install folder must be in the `$PATH$` environment variable.
 
+## Building in Overleaf
+
+This project was not designed to be used on Overleaf, so the workflow is not very streamlined. However, it is possible to do so. 
+Please refer to [issue #13](https://github.com/ruilvo/FCUP_Thesis_LaTeX/issues/13#issuecomment-1364491199)
+for guidance.
+
 ## Credits
 
 Credits to the original owner whose identity seems to have been lost.
